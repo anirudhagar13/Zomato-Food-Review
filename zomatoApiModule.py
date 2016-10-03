@@ -2,7 +2,10 @@ import httplib, urllib, urllib2, json
 
 class zomatoApi:
 	'''
-		description
+		this class
+			- makes the query (make_query) 
+			- executes the query (execute_query)
+			- manipulates the data (parse,json_parse)
 	'''
 	def __init__(self,api_key,output_type):
 
@@ -16,15 +19,23 @@ class zomatoApi:
 
 	def make_query(self,func,args={}):
 
+		'''
+			func - the call made to the API. eg. cities/reviews etc
+			args - arguments to be passed alongwith a particular func
+		'''
 		#exit if func variable is empty
+
 		#construct the query
-		query = zomatoApiRequest(func,args,api_key)
-		
+		query = zomatoApiRequest(func,args,self.api_key)
 		#execute the query
 		self.execute_query(query)
 
 	def execute_query(self,query,headers = {}):
 
+		'''
+			query - object of class zomatoApiRequest
+			headers - dict of meta data for API call
+		'''
 		request = urllib2.Request(query.full_url)
 		request.add_header('X-Zomato-API-Key', self.api_key)
 		
@@ -37,6 +48,7 @@ class zomatoApi:
 		self.response = response.read() # change name of self.response later
 
 		self.printdata(self.parse())
+		#return self.parse()
 
 	def printdata(self,data):
 
@@ -56,8 +68,9 @@ class zomatoApi:
 
 class zomatoApiRequest:
 	'''
-		generates the URI( = URL + func)
-
+		this class
+			- makes the URI(= URL + func)
+			- encodes arguments into the URL
 	'''
 	def __init__(self,func,args,api_key):
 
@@ -89,12 +102,15 @@ class zomatoApiRequest:
 
 	def validate_args(self):
 
+		'''
+			validates the arguments passed for the particular API call
+			TODO
+		'''
 		return True
 
 if __name__ == "__main__":
 	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d"
 	output_type = "json"
-
 	z = zomatoApi(api_key,output_type)
 	func = "categories"
 	args = dict()
