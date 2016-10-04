@@ -28,7 +28,7 @@ class zomatoApi:
 		#construct the query
 		query = zomatoApiRequest(func,args,self.api_key)
 		#execute the query
-		self.execute_query(query)
+		return self.execute_query(query)
 
 	def execute_query(self,query,headers = {}):
 
@@ -47,8 +47,8 @@ class zomatoApi:
 		response = urllib2.urlopen(request)
 		self.response = response.read() # change name of self.response later
 
-		self.printdata(self.parse())
-		#return self.parse()
+		#self.printdata(self.parse())
+		return self.parse()
 
 	def printdata(self,data):
 
@@ -112,7 +112,10 @@ if __name__ == "__main__":
 	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d"
 	output_type = "json"
 	z = zomatoApi(api_key,output_type)
+	
 	func = "categories"
 	args = dict()
+	categories = z.make_query(func,args)
+	print categories
+	
 	#args["city_ids"] = 1
-	z.make_query(func,args)
