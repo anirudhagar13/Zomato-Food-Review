@@ -1,4 +1,5 @@
 import zomatoApiModule
+import json
 
 class Driver:
 	def __init__(self,api_key,output_type):
@@ -120,3 +121,6 @@ if __name__ == "__main__":
 	for res_id in all_restaurants:
 		res_reviews[res_id] = d.getReviews(res_id,count=2)
 	print res_reviews
+	
+	with open('Reviews.json','w') as outfile:
+		json.dump(res_reviews,outfile)
