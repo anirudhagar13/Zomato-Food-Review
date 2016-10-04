@@ -45,6 +45,33 @@ class Driver:
 		#print output
 		return cuisines
 
+	def getEstablishments(self):
+		#todo
+		pass
+
+	def getLocation(self, location_name):
+		'''	
+			get details of most relevant
+			locations searched by name
+		'''
+		func = "locations"
+		args = { 'query': location_name }
+		output = self.z.make_query(func,args)
+		return output['location_suggestions'][0]
+
+	def getLocationDetails(self,entity_id,entity_type):
+		'''
+			get Foodie Index, Nightlife Index, 
+			Top Cuisines, Best rated restaurants
+		'''
+		func = "location_details"
+		args = { 'entity_id' : entity_id, 'entity_type' : entity_type } 
+		output = self.z.make_query(func,args)
+		#todo
+
+	
+
+
 if __name__ == "__main__":
 	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d"
 	output_type = "json"
@@ -52,5 +79,7 @@ if __name__ == "__main__":
 	#print d.getCategories()
 	city_id = d.getCityDetails("Delhi")['id']
 	#d.getCollections(city_id)
-	cuisines =  d.getCuisines(city_id) # list of dicts
-	
+	#cuisines =  d.getCuisines(city_id) # list of dicts
+	location_params = d.getLocation("Indiranagar") # dict of location params
+	d.getLocationDetails(location_params['entity_id'],location_params['entity_type'])
+
