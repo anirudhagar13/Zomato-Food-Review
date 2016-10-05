@@ -104,6 +104,13 @@ class Driver:
 	def getRestaurantDetails(self,res_id,count=20):
 		#todo
 		pass
+
+	def getDailyMenu(self,res_id):
+		func = "dailymenu"
+		args = {'res_id':res_id}
+		output = self.z.make_query(func,args)
+		for i in output['daily_menu']:
+			
 			
 if __name__ == "__main__":
 	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d"
