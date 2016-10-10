@@ -82,7 +82,7 @@ class Driver:
 		all_restaurants = list()
 		output = self.z.make_query(func,args)
 		print output
-		return output
+		#return output
 		'''
 		for i in output['restaurants'] :
 			all_restaurants.append(i['restaurant']['id'])
@@ -113,25 +113,31 @@ class Driver:
 		args = {'res_id':res_id}
 		menu_items= list()
 		output = self.z.make_query(func,args)
+		print output
+		'''
 		for i in output['daily_menu']:
 			# i is a dict
 			for d in i['dishes']:
 				#d is a dict
 				menu_items.append(d)
 		return menu_items
+		'''
 			
 if __name__ == "__main__":
-	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d"
+	
+	#api_key = "" #your zomato api_key here
 	output_type = "json"
 	d = Driver(api_key,output_type)
 	#print d.getCategories()
 	#city_id = d.getCityDetails("Delhi")['id']
 	#d.getCollections(city_id)
 	#cuisines =  d.getCuisines(city_id) # list of dicts
-	location_params = d.getLocation("Koramangala, Bangalore") # dict of location params
+	location_params = d.getLocation("Indiranagar, Bangalore") # dict of location params
 	#d.getLocationDetails(location_params['entity_id'],location_params['entity_type'])
 	#print location_params
-	all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=2)
+	all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=1)
+	#print all_restaurants
+	print len(set(all_restaurants))
 	#print all_restaurants
 	'''
 	res_reviews = dict()
@@ -139,6 +145,17 @@ if __name__ == "__main__":
 		res_reviews[res_id] = d.getReviews(res_id,count=2)
 	#print res_reviews
 	'''
+	'''
+	menu = list() # a list of dicts
+	for res in all_restaurants:
+		menu.append(d.getDailyMenu(res))
 
-	with open('Reviews.json','w') as outfile:
+	'''
+	'''
+	with open('Restaurant_IDs.json','w') as outfile:
 		json.dump(all_restaurants,outfile)
+
+	print "rest_ids dumped json"
+	with open('Menu_Items.json','w') as outfile:
+		json.dump(menu,outfile)
+	'''
