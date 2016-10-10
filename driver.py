@@ -81,11 +81,13 @@ class Driver:
 		args = { 'entity_id':entity_id, 'entity_type':entity_type, 'count':count }
 		all_restaurants = list()
 		output = self.z.make_query(func,args)
-		#print output
+		print output
 		#return output
+		'''
 		for i in output['restaurants'] :
 			all_restaurants.append(i['restaurant']['id'])
 		return all_restaurants
+		'''
 
 	def getReviews(self,res_id,count=20):
 		'''
@@ -122,6 +124,7 @@ class Driver:
 		'''
 			
 if __name__ == "__main__":
+	
 	#api_key = "" #your zomato api_key here
 	output_type = "json"
 	d = Driver(api_key,output_type)
@@ -129,10 +132,12 @@ if __name__ == "__main__":
 	#city_id = d.getCityDetails("Delhi")['id']
 	#d.getCollections(city_id)
 	#cuisines =  d.getCuisines(city_id) # list of dicts
-	location_params = d.getLocation("Bangalore") # dict of location params
+	location_params = d.getLocation("Indiranagar, Bangalore") # dict of location params
 	#d.getLocationDetails(location_params['entity_id'],location_params['entity_type'])
 	#print location_params
-	all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=50)
+	all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=1)
+	#print all_restaurants
+	print len(set(all_restaurants))
 	#print all_restaurants
 	'''
 	res_reviews = dict()
@@ -140,11 +145,12 @@ if __name__ == "__main__":
 		res_reviews[res_id] = d.getReviews(res_id,count=2)
 	#print res_reviews
 	'''
-
+	'''
 	menu = list() # a list of dicts
 	for res in all_restaurants:
 		menu.append(d.getDailyMenu(res))
 
+	'''
 	'''
 	with open('Restaurant_IDs.json','w') as outfile:
 		json.dump(all_restaurants,outfile)
