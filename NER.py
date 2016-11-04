@@ -3,7 +3,9 @@ import nltk
 from nltk.corpus import stopwords
 
 def Preprocess(t):
-    #Everything reduced to lower case for ease of processing
+    '''
+        Everything reduced to lower case for ease of processing
+    '''
     t = t.lower()
 
     # Specific case to remove <'> so as to tag properly
@@ -11,8 +13,10 @@ def Preprocess(t):
 
     return t
 
-# Text Segmentation and Tagging
 def Postag(t):
+    '''
+        Text Segmentation and Tagging
+    '''
     sentences = nltk.sent_tokenize(t)
     tokenized_sentences = [nltk.word_tokenize(sentence) for sentence in sentences]
 
@@ -24,8 +28,10 @@ def Postag(t):
 
     return pos_tagged
 
-# Chunking is grouping tagged words as phrases
 def Chunking(t):
+    '''
+        Chunking is grouping tagged words as phrases
+    '''
     # Tag pattern to identify dishes
     pattern = '''FOOD : {<NN.*>+}'''
 
@@ -34,8 +40,10 @@ def Chunking(t):
 
     return tree
 
-# To parse chunk tree
 def Treeparse(tree):
+    '''
+        To parse chunk tree
+    '''
     foods = []
     for subtree in tree.subtrees():
         if subtree.label() == 'FOOD':

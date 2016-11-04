@@ -1,7 +1,7 @@
 def partialMatch(mention_text, menu_item_text):
 	'''
 		a partial match occurs when more than
-		half of the words in the mention can be 
+		half of the words in the mention can be
 		found in the menu item's name and description
 	'''
 	words_matched = 0
@@ -22,7 +22,11 @@ def partialMatch(mention_text, menu_item_text):
 		return False
 
 def Fuzzymatch(str1, str2, edit):
-    # Create a table to store results of subproblems
+    '''
+        Create a table to store results of subproblems
+        Compares edit distance between strings, equal
+        if less than edit parameter.
+    '''
     m = len(str1)
     n = len(str2)
     dp = [[0 for x in range(m+1)] for x in range(n+1)]
@@ -52,6 +56,9 @@ def Fuzzymatch(str1, str2, edit):
         return True
 
 def Substring(str1, str2):
+    '''
+        Checks if either of strings part of the other
+    '''
     if str1 in str2 or str2 in str1:
         return True
     else:
