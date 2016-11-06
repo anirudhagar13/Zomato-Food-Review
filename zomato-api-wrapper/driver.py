@@ -1,5 +1,6 @@
 import zomatoApiModule
 import json
+import pickle
 
 class Driver:
 	def __init__(self,api_key,output_type):
@@ -70,7 +71,7 @@ class Driver:
 		output = self.z.make_query(func,args)
 		#todo
 
-	def search(self,city_name,cuisine_id,count=5):
+	def search(self,city_name,cuisine_id,start=0,count=5):
 		#TODO the default for entity_type
 		'''
 			get restaurants for the given location(entity_id)
@@ -78,27 +79,57 @@ class Driver:
 						/establishment type/...
 		'''
 		func = "search"
-		loc_params = self.getLocation(city_name)
+		#loc_params = self.getLocation(city_name)
 		#print loc_params
-		entity_id = loc_params['entity_id']
+		#entity_id = loc_params['entity_id']
 		#print "entity_id = ", entity_id
-		args = { 'entity_id':entity_id, 'cuisines':cuisine_id, 'count':count }
-		all_restaurants = dict()
+		args = { 'entity_id':1, 'cuisines':cuisine_id, 'start':start, 'count':count }
 		output = self.z.make_query(func,args)
 		#print output
-		#return output
-		for i in output['restaurants'] :
-			all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
-			#all_restaurants["city"] = i['restaurant']['location']['city']
+		return output
+
+	def exhaustiveSearch(self,city_name,cuisine_id):
+		'''
+			todo
+		'''
+		start = 0
+		cnt = 20
+		offset = start
+		all_restaurants = dict()
+		output = self.search(city_name,cuisine_id,start=offset,count=0)
+		total_results = output['results_found']
+		restro_ids = list()
+		print "total_results = ", total_results
+		
+		while(offset + cnt < total_results):
+			output = self.search(city_name,cuisine_id,start=offset,count=cnt)
+			if output['restaurants']:
+				for i in output['restaurants'] : # try extending instead of appending - rid the for loop
+					restro_ids.append(i['restaurant']['id'])
+					all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+			if not output['restaurants']:
+				pass
+				#print "search returned empty dict"	#change this	
+			
+			offset += cnt
+
+		if(offset <= total_results):
+			output = self.search(city_name,cuisine_id,start=offset,count=(total_results-offset))	
+			if output['restaurants']:
+				for i in output['restaurants'] :
+					restro_ids.append(i['restaurant']['id'])
+					all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+		
+		#print len(restro_ids)
+		#print restro_ids
 		return all_restaurants
 
-
-	def getReviews(self,res_id,count=20):
+	def getReviews(self,res_id,start=0,count=5):
 		'''
 			get reviews of the given res_id
 		'''
 		func = "reviews"
-		args = { 'res_id':res_id, 'count':count }
+		args = { 'res_id':res_id, 'start':start, 'count':count }
 		all_reviews = list()
 		output = self.z.make_query(func,args)
 		for i in output['user_reviews']:
@@ -107,6 +138,9 @@ class Driver:
 			review.append(i['review']['rating'])
 			all_reviews.append(review)
 		return all_reviews
+
+	def exhaustivegetReviews():
+		pass
 
 	def getRestaurantDetails(self,res_id,count=20):
 		#todo
@@ -145,14 +179,29 @@ if __name__ == "__main__":
 	output_type = "json"
 	d = Driver(api_key,output_type)
 	#all_cuisines = d.getCuisines(1) # get all cuisines in city whose id is param
-	cuisine_id = d.getCuisineId("Delhi","Andhra")
-	restros = d.search("Delhi",cuisine_id)
+	cuisine_id = d.getCuisineId("Delhi","Chettinad")
+	restros = d.exhaustive_search("Delhi",cuisine_id)	
+	
+	#print len(restros)
+	#print restros
+
+	with open('restros.pickle', 'wb') as handle:
+		pickle.dump(restros, handle)
+	
+	'''
+	with open('restros.pickle', 'rb') as handle:
+		b = pickle.load(handle)
+
+	if restros == b:
+		print "pickle success"
+	'''
+	#restros = d.search("Delhi",cuisine_id,count=0)
+	#print restros
+	'''
 	for i in restros:
 		print d.getReviews(i,5)	
-
-	#print restros
-	#print "cuisine id = ",cuisine_id
-
+	'''
+	
 	#print d.getCategories()
 	#city_id = d.getCityDetails("Delhi")['id']
 	#d.getCollections(city_id)
