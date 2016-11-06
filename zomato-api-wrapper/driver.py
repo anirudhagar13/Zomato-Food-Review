@@ -70,24 +70,28 @@ class Driver:
 		output = self.z.make_query(func,args)
 		#todo
 
-	def search(self,entity_id,entity_type,count=20):
-		#what is the default for entity_type
+	def search(self,city_name,cuisine_id,count=5):
+		#TODO the default for entity_type
 		'''
 			get restaurants for the given location(entity_id)
 			other args - cuisines/collections/category
 						/establishment type/...
 		'''
 		func = "search"
-		args = { 'entity_id':entity_id, 'entity_type':entity_type, 'count':count }
-		all_restaurants = list()
+		loc_params = self.getLocation(city_name)
+		#print loc_params
+		entity_id = loc_params['entity_id']
+		#print "entity_id = ", entity_id
+		args = { 'entity_id':entity_id, 'cuisines':cuisine_id, 'count':count }
+		all_restaurants = dict()
 		output = self.z.make_query(func,args)
-		print output
+		#print output
 		#return output
-		'''
 		for i in output['restaurants'] :
-			all_restaurants.append(i['restaurant']['id'])
+			all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+			#all_restaurants["city"] = i['restaurant']['location']['city']
 		return all_restaurants
-		'''
+
 
 	def getReviews(self,res_id,count=20):
 		'''
@@ -122,22 +126,47 @@ class Driver:
 				menu_items.append(d)
 		return menu_items
 		'''
+	def getCuisineId(self,city_name,cuisine_name):
+		'''
+			get cuisine id
+			params - city_name - name of the city (string)
+				   - cuisine_name - name of the cuisine (string)
+		'''
+		city = self.getCityDetails(city_name)['id']
+		#print "city id = ", city
+		for cuisine in self.getCuisines(city):
+			if cuisine['cuisine_name'] == cuisine_name:
+				return cuisine['cuisine_id']
+
 			
 if __name__ == "__main__":
 	
-	#api_key = "" #your zomato api_key here
+	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d" #your zomato api_key here
 	output_type = "json"
 	d = Driver(api_key,output_type)
+	#all_cuisines = d.getCuisines(1) # get all cuisines in city whose id is param
+	cuisine_id = d.getCuisineId("Delhi","Andhra")
+	restros = d.search("Delhi",cuisine_id)
+	for i in restros:
+		print d.getReviews(i,5)	
+
+	#print restros
+	#print "cuisine id = ",cuisine_id
+
 	#print d.getCategories()
 	#city_id = d.getCityDetails("Delhi")['id']
 	#d.getCollections(city_id)
 	#cuisines =  d.getCuisines(city_id) # list of dicts
-	location_params = d.getLocation("Indiranagar, Bangalore") # dict of location params
+	#location_params = d.getLocation("Indiranagar, Bangalore") # dict of location params
+		
+
+
+
 	#d.getLocationDetails(location_params['entity_id'],location_params['entity_type'])
 	#print location_params
-	all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=1)
+	#all_restaurants = d.search(location_params['entity_id'],location_params['entity_type'],count=1)
 	#print all_restaurants
-	print len(set(all_restaurants))
+	#print len(set(all_restaurants))
 	#print all_restaurants
 	'''
 	res_reviews = dict()
