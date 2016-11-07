@@ -86,7 +86,12 @@ class Driver:
 		args = { 'entity_id':1, 'cuisines':cuisine_id, 'start':start, 'count':count }
 		output = self.z.make_query(func,args)
 		#print output
-		return output
+		#return output
+		all_restaurants = dict()
+		for i in output['restaurants'] :
+			#restro_ids.append(i['restaurant']['id'])
+			all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+		return all_restaurants
 
 	def exhaustiveSearch(self,city_name,cuisine_id):
 		'''
@@ -132,15 +137,58 @@ class Driver:
 		args = { 'res_id':res_id, 'start':start, 'count':count }
 		all_reviews = list()
 		output = self.z.make_query(func,args)
+		
+		#print output
+		
 		for i in output['user_reviews']:
 			review = list()
 			review.append(i['review']['review_text'])
 			review.append(i['review']['rating'])
 			all_reviews.append(review)
 		return all_reviews
+		
 
-	def exhaustivegetReviews():
-		pass
+	def exhaustiveReviews(self,restros):
+		'''
+			todo
+		'''
+		start = 0
+		cnt = 20
+		all_reviews = dict()
+		for i in restros.keys(): # i is restaurant id
+			offset = start
+			output = self.getReviews(i,start=offset,count=0)
+			total_results = output['reviews_count']
+			while(offset + cnt < total_results):
+				output = self.getReviews(i,start=offset,count=20)
+			total_results = output['results_found']
+
+		
+		restro_ids = list()
+		print "total_results = ", total_results
+		
+		while(offset + cnt < total_results):
+			output = self.search(city_name,cuisine_id,start=offset,count=cnt)
+			if output['restaurants']:
+				for i in output['restaurants'] : # try extending instead of appending - rid the for loop
+					restro_ids.append(i['restaurant']['id'])
+					all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+			if not output['restaurants']:
+				pass
+				#print "search returned empty dict"	#change this	
+			
+			offset += cnt
+
+		if(offset <= total_results):
+			output = self.search(city_name,cuisine_id,start=offset,count=(total_results-offset))	
+			if output['restaurants']:
+				for i in output['restaurants'] :
+					restro_ids.append(i['restaurant']['id'])
+					all_restaurants[i['restaurant']['id']] = i['restaurant']['location']['city']
+		
+		#print len(restro_ids)
+		#print restro_ids
+		return all_restaurants
 
 	def getRestaurantDetails(self,res_id,count=20):
 		#todo
@@ -178,23 +226,45 @@ if __name__ == "__main__":
 	api_key = "906f9fa4a8b8ec2cbafad0c5bb27272d" #your zomato api_key here
 	output_type = "json"
 	d = Driver(api_key,output_type)
-	#all_cuisines = d.getCuisines(1) # get all cuisines in city whose id is param
-	cuisine_id = d.getCuisineId("Delhi","Chettinad")
-	restros = d.exhaustive_search("Delhi",cuisine_id)	
-	
+
+	#289 city_id for Boston, MA
+	#all_cuisines = d.getCuisines(289) # get all cuisines in city whose id is param
+	#print all_cuisines
+	cuisine_id = d.getCuisineId("Boston","Spanish")
+	#restros = d.exhaustiveSearch("Boston",cuisine_id)	
+	restros =  d.search("Boston",cuisine_id)
+	for i in restros.keys():
+		print "res_id = ", i
+		menu = d.getDailyMenu(i)
+		if (menu["message"] == "No Daily Menu Available"):
+			print "No menu available"
+		else:
+			print menu
+
 	#print len(restros)
 	#print restros
-
-	with open('restros.pickle', 'wb') as handle:
-		pickle.dump(restros, handle)
-	
 	'''
-	with open('restros.pickle', 'rb') as handle:
-		b = pickle.load(handle)
+	#code to print reviews - readable
+	for i in restros.keys():
+		rev = d.getReviews(i)
+		for j in rev:
+			print "review text = ", j[0]
+			print "review rating = ", j[1]
+			print "\n#######################"
+		print "\n\n******************************"
+	'''
+	#with open('restros.pickle', 'wb') as handle:
+	#	pickle.dump(restros, handle)
 
+	#with open('restros.pickle', 'rb') as handle:
+	#	restros = pickle.load(handle)
+	'''	
 	if restros == b:
 		print "pickle success"
 	'''
+
+	#reviews = d.exhaustiveReviews(restros)
+	
 	#restros = d.search("Delhi",cuisine_id,count=0)
 	#print restros
 	'''
