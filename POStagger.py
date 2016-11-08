@@ -1,6 +1,9 @@
 import json
 import nltk
 from nltk.corpus import stopwords
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def Preprocess(t):
     '''
@@ -63,8 +66,9 @@ if __name__ == '__main__':
 
     for place, reviews in unprocess_data.items():
         for review, rating in reviews:
-            processed = Preprocess(review)
+            processed = Preprocess(str(review))
             tagged = Postag(processed)
+            print tagged
             chunked = Chunking(tagged)
             parsed = set(Treeparse(chunked))
 
