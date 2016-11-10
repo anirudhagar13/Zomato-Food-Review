@@ -1,16 +1,24 @@
-import os
+import os,pickle
 
 if __name__ == "__main__":
     dirname1 = "Reviews/"
     dirname2 = "Ratings/"
-
+    with open('data/restname_id.pickle', 'rb') as f:
+        mapping = pickle.load(f)
+    mapping = {int(k):v for k,v in mapping.items()}
     rest_details = dict()
     for fname in os.listdir(dirname1):
+        dictid = 0
         for root, dirs, files in os.walk(dirname2):
             for filename in files:
                 if fname[:-12] in filename[:-12]:
+                    flg = True
+                    for res_id, name in mapping.iteritems():
+                        if flg == True and name == fname[:-12].lower():
+                            flg = False
+                            dictid = res_id
                     ls = list()
-                    rest_details[fname[:-12]] = dict()
+                    rest_details[dictid] = dict()
                     f1 = open((dirname1+fname),'r')
                     f2 = open((dirname2+filename),'r')
                     lines = f2.readlines()
@@ -30,7 +38,8 @@ if __name__ == "__main__":
                         review = lines2[i].strip()
                         rating = lines[i].rstrip()
                         ls.append((rating,review))
-                    rest_details[fname[:-12]] = ls
+                    rest_details[dictid] = ls
+                    #rest_details[fname[:-12]] = ls
                     '''
                     for line,i in zip(f.read().split('-'),lines):
                         rest_details[fname[:-12]].append([i[:-1],line.strip().split('\n')])
@@ -38,4 +47,4 @@ if __name__ == "__main__":
                     '''
                     #print "*******************
 
-    print rest_details['BelgYum']
+    print rest_details[58818]
