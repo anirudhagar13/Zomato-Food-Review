@@ -1,0 +1,3403 @@
+(dp0
+S'52282'
+p1
+(S'3.6'
+p2
+(lp3
+(S'hot coffee'
+p4
+S'24'
+p5
+tp6
+a(S'cold coffee'
+p7
+S'47'
+p8
+tp9
+a(S'lemon juice'
+p10
+S'20'
+p11
+tp12
+a(S'rose milk'
+p13
+S'47'
+p14
+tp15
+a(S'hot milk'
+p16
+S'26'
+p17
+tp18
+a(S'idly'
+p19
+S'20'
+p20
+tp21
+a(S'vada'
+p22
+S'20'
+p23
+tp24
+a(S'potato finger chips'
+p25
+S'20'
+p26
+tp27
+a(S'vegetable cutlet'
+p28
+S'40'
+p29
+tp30
+a(S'masala dosa'
+p31
+S'40'
+p32
+tp33
+a(S'plain dosa'
+p34
+S'35'
+p35
+tp36
+a(S'bread & butter'
+p37
+S'21'
+p38
+tp39
+a(S'bread toast'
+p40
+S'23'
+p41
+tp42
+a(S'bread toast jam'
+p43
+S'28'
+p44
+tp45
+a(S'bread butter jam'
+p46
+S'27'
+p47
+tp48
+a(S'mutton cutlet'
+p49
+S'55'
+p50
+tp51
+a(S'tomato sandwitch'
+p52
+S'40'
+p53
+tp54
+a(S'cucumber sandwitch'
+p55
+S'40'
+p56
+tp57
+a(S'egg sandwitch'
+p58
+S'43'
+p59
+tp60
+a(S'omlette 2 eggs'
+p61
+S'35'
+p62
+tp63
+a(S'fried egg 2 eggs'
+p64
+S'35'
+p65
+tp66
+a(S'tomato mixed omlette'
+p67
+S'40'
+p68
+tp69
+a(S'omlette with chips'
+p70
+S'40'
+p71
+tp72
+a(S'tomato omlette with chips'
+p73
+S'40'
+p74
+tp75
+a(S'scrambeled egg toast'
+p76
+S'65'
+p77
+tp78
+a(S'omlette 1 egg'
+p79
+S'20'
+p80
+tp81
+a(S'boiled egg 1 egg'
+p82
+S'10'
+p83
+tp84
+a(S'kesari bath'
+p85
+S'20'
+p86
+tp87
+a(S'kara bath'
+p88
+S'20'
+p89
+tp90
+a(S'pakoda'
+p91
+S'20'
+p92
+tp93
+a(S'rice bath'
+p94
+S'20'
+p95
+tp96
+a(S'mini meals'
+p97
+S'30'
+p98
+tp99
+a(S'special meals'
+p100
+S'50'
+p101
+tp102
+a(S'chappathi'
+p103
+S'30'
+p104
+tp105
+atp106
+sS'58646'
+p107
+(S'4.4'
+p108
+(lp109
+(S'idly'
+p110
+S'24'
+p111
+tp112
+a(S'vada'
+p113
+S'20'
+p114
+tp115
+a(S'kesari bath'
+p116
+S'20'
+p117
+tp118
+a(S'khara bath'
+p119
+S'20'
+p120
+tp121
+a(S'chow chow bath'
+p122
+S'40'
+p123
+tp124
+a(S'masala dosa'
+p125
+S'35'
+p126
+tp127
+a(S'set dosa '
+p128
+S'35'
+p129
+tp130
+a(S'rava idly'
+p131
+S'25'
+p132
+tp133
+a(S'lemon rice'
+p134
+S'30'
+p135
+tp136
+a(S'pulav'
+p137
+S'30'
+p138
+tp139
+a(S'madduru vada'
+p140
+S'20'
+p141
+tp142
+a(S'curd rice'
+p143
+S'30'
+p144
+tp145
+a(S'coffee/tea'
+p146
+S'10'
+p147
+tp148
+atp149
+sS'18278230'
+p150
+(S'4.1'
+p151
+(lp152
+(S'himalayan belu ras'
+p153
+S'131'
+p154
+tp155
+a(S'nariyal passion mantra'
+p156
+S'141'
+p157
+tp158
+a(S'banana bulb'
+p159
+S'131'
+p160
+tp161
+a(S'kiwi ambi panna'
+p162
+S'141'
+p163
+tp164
+a(S'kk lemon shikanji'
+p165
+S'121'
+p166
+tp167
+a(S'patialey wali lassi'
+p168
+S'121'
+p169
+tp170
+a(S'chatmolafatafat'
+p171
+S'141'
+p172
+tp173
+a(S'masakali'
+p174
+S'141'
+p175
+tp176
+a(S'aerated beverages'
+p177
+S'66'
+p178
+tp179
+a(S'chai / kaafi'
+p180
+S'55'
+p181
+tp182
+a(S'mineral water'
+p183
+S'55'
+p184
+tp185
+a(S'luchknowi dahi ki shammi'
+p186
+S'242'
+p187
+tp188
+a(S'sasron ki champey'
+p189
+S'262'
+p190
+tp191
+a(S'taka takpaneer tikka'
+p192
+S'333'
+p193
+tp194
+a(S'jorpuri subz galouti'
+p195
+S'242'
+p196
+tp197
+a(S'tandoori mushroom'
+p198
+S'262'
+p199
+tp200
+a(S'challi kolmi kebab'
+p201
+S'252'
+p202
+tp203
+a(S'achari hari hari seekh'
+p204
+S'242'
+p205
+tp206
+a(S'kastoori mughalai phool'
+p207
+S'252'
+p208
+tp209
+a(S'pfc hari mirch chicken'
+p210
+S'323'
+p211
+tp212
+a(S'jalndari sikandari tangadi'
+p213
+S'333'
+p214
+tp215
+a(S'ganna chicken'
+p216
+S'343'
+p217
+tp218
+a(S'gizwani murg chapli'
+p219
+S'323'
+p220
+tp221
+a(S'mughal e murgh tikka'
+p222
+S'383'
+p223
+tp224
+a(S'mal mal seekh'
+p225
+S'353'
+p226
+tp227
+a(S'murg malai shooley'
+p228
+S'343'
+p229
+tp230
+a(S'purkazi key shammi kebab'
+p231
+S'373'
+p232
+tp233
+a(S'mutton hatodi  parchey'
+p234
+S'424'
+p235
+tp236
+a(S'nawabi galouti kebab'
+p237
+S'444'
+p238
+tp239
+a(S'kebab no. 5'
+p240
+S'454'
+p241
+tp242
+a(S'mutton kalmi pasht'
+p243
+S'393'
+p244
+tp245
+a(S'gaathia macchi tikka'
+p246
+S'494'
+p247
+tp248
+a(S'amritsari macchi '
+p249
+S'444'
+p250
+tp251
+a(S'achaari angaari jheenga'
+p252
+S'545'
+p253
+tp254
+a(S'crab 25'
+p255
+S'575'
+p256
+tp257
+a(S'the royal kebab press'
+p258
+S'888'
+p259
+tp260
+a(S'samundari istree'
+p261
+S'999'
+p262
+tp263
+a(S'dal e dhania'
+p264
+S'141'
+p265
+tp266
+a(S'makai murgh ka raab'
+p267
+S'161'
+p268
+tp269
+a(S'tamatar vadi ka shorba'
+p270
+S'141'
+p271
+tp272
+a(S'lehsooni palak pyala'
+p273
+S'141'
+p274
+tp275
+a(S'dhania chingri'
+p276
+S'181'
+p277
+tp278
+a(S'choley chaar ghuntala'
+p279
+S'151'
+p280
+tp281
+a(S'kartari railway dal'
+p282
+S'141'
+p283
+tp284
+a(S'ralli anakoot murgh'
+p285
+S'171'
+p286
+tp287
+a(S'picnic chicken'
+p288
+S'181'
+p289
+tp290
+a(S'bohri mutton curry'
+p291
+S'212'
+p292
+tp293
+a(S'mastawa'
+p294
+S'222'
+p295
+tp296
+a(S'wargi dal e dastaan'
+p297
+S'292'
+p298
+tp299
+a(S'hkathiawari tarkari'
+p300
+S'282'
+p301
+tp302
+a(S'khatti tomato gobi'
+p303
+S'272'
+p304
+tp305
+a(S'shaahi subj daalcha'
+p306
+S'292'
+p307
+tp308
+a(S'harey masaley key koftey'
+p309
+S'333'
+p310
+tp311
+a(S'kacchey amm ki karari bhindi'
+p312
+S'282'
+p313
+tp314
+a(S'panchkuta matka saag'
+p315
+S'303'
+p316
+tp317
+a(S'khurchan paneer papadi'
+p318
+S'373'
+p319
+tp320
+a(S"vekka singh's makhhan paneer"
+p321
+S'383'
+p322
+tp323
+a(S'new delhi butter chicken '
+p324
+S'373'
+p325
+tp326
+a(S'cookermein kukkad'
+p327
+S'373'
+p328
+tp329
+a(S'gustaba rista'
+p330
+S'454'
+p331
+tp332
+a(S'nawabi nihari nalli'
+p333
+S'484'
+p334
+tp335
+a(S'macchi tikka masal'
+p336
+S'525'
+p337
+tp338
+a(S'jheega e truramkhan'
+p339
+S'626'
+p340
+tp341
+a(S'tandoori burnt garlic vegetable biryani'
+p342
+S'333'
+p343
+tp344
+a(S'chaar minari biryani'
+p345
+S'373'
+p346
+tp347
+a(S"kopper kadai's signature chicken biryani"
+p348
+S'525'
+p349
+tp350
+a(S'bombay blues biryani'
+p351
+S'535'
+p352
+tp353
+a(S'bhatti biryani'
+p354
+S'525'
+p355
+tp356
+a(S'pankhuri roti'
+p357
+S'111'
+p358
+tp359
+a(S'ghee rice '
+p360
+S'225'
+p361
+tp362
+a(S'steamed rice'
+p363
+S'225'
+p364
+tp365
+a(S'kurkura raita'
+p366
+S'151'
+p367
+tp368
+a(S'pineapple raita'
+p369
+S'161'
+p370
+tp371
+a(S'mandi salad'
+p372
+S'131'
+p373
+tp374
+a(S'kachumber'
+p375
+S'141'
+p376
+tp377
+a(S'gehu ki roti'
+p378
+S'55'
+p379
+tp380
+a(S'naaaaaaaaaan'
+p381
+S'88'
+p382
+tp383
+a(S'paratha'
+p384
+S'88'
+p385
+tp386
+a(S'roomali roli'
+p387
+S'99'
+p388
+tp389
+a(S'makki ki roti'
+p390
+S'111'
+p391
+tp392
+a(S'mix bread tokri'
+p393
+S'222'
+p394
+tp395
+a(S'batessa cake'
+p396
+S'222'
+p397
+tp398
+a(S'dilli wali fruit cream'
+p399
+S'242'
+p400
+tp401
+a(S'nutella dodhalava'
+p402
+S'252'
+p403
+tp404
+a(S'gulab jamun biskit'
+p405
+S'151'
+p406
+tp407
+a(S'malai asharfiyan '
+p408
+S'181'
+p409
+tp410
+a(S'choice of ice cream'
+p411
+S'181'
+p412
+tp413
+a(S'k.k. kullad kulfi'
+p414
+S'222'
+p415
+tp416
+atp417
+sS'52098'
+p418
+(S'4.9'
+p419
+(lp420
+(S'idly'
+p421
+S'16'
+p422
+tp423
+a(S'vade'
+p424
+S'22'
+p425
+tp426
+a(S'khara bath'
+p427
+S'22'
+p428
+tp429
+a(S'kesari bath'
+p430
+S'22'
+p431
+tp432
+a(S'coffee / tea'
+p433
+S'16'
+p434
+tp435
+a(S'butter'
+p436
+S'8'
+p437
+tp438
+atp439
+sS'58698'
+p440
+(S'4.3'
+p441
+(lp442
+(S'tom yum '
+p443
+S'169'
+p444
+tp445
+a(S'chinese sour and pepper soup'
+p446
+S'219'
+p447
+tp448
+a(S'oriental clear soup '
+p449
+S'169'
+p450
+tp451
+a(S'sweet corn soup'
+p452
+S'169'
+p453
+tp454
+a(S'summer roll with basil dip '
+p455
+S'319'
+p456
+tp457
+a(S'summer mango salad '
+p458
+S'349'
+p459
+tp460
+a(S'snow peas and green beans salad'
+p461
+S'349'
+p462
+tp463
+a(S'som tam salad'
+p464
+S'199'
+p465
+tp466
+a(S'slim sumo salad'
+p467
+S'349'
+p468
+tp469
+a(S"mama's lab kai "
+p470
+S'399'
+p471
+tp472
+a(S'thai chicken and water chestnut salad'
+p473
+S'439'
+p474
+tp475
+a(S'crsipy lotus stem'
+p476
+S'239'
+p477
+tp478
+a(S'crispy chilli potato'
+p479
+S'229'
+p480
+tp481
+a(S'straight up beans'
+p482
+S'219'
+p483
+tp484
+a(S'water chestnut spring roll'
+p485
+S'289'
+p486
+tp487
+a(S'bite sized corm fritter balls'
+p488
+S'239'
+p489
+tp490
+a(S'hua hin highway rolls'
+p491
+S'259'
+p492
+tp493
+a(S'java grilled tofu'
+p494
+S'439'
+p495
+tp496
+a(S'bophhut village hot chicken wings'
+p497
+S'349'
+p498
+tp499
+a(S'honey chicken'
+p500
+S'319'
+p501
+tp502
+a(S'classic chicken wings'
+p503
+S'339'
+p504
+tp505
+a(S'shrimp with dry red chilli'
+p506
+S'479'
+p507
+tp508
+a(S'traditional crsipy lamb'
+p509
+S'479'
+p510
+tp511
+a(S'street chicken satay '
+p512
+S'379'
+p513
+tp514
+a(S'spiced asian BBQ chicken breast'
+p515
+S'419'
+p516
+tp517
+a(S'grilled fish with south east asian dressing'
+p518
+S'339'
+p519
+tp520
+a(S'java grilled fish in red hot sambal juice'
+p521
+S'509'
+p522
+tp523
+a(S'cheese and truffle oil dumplings'
+p524
+S'299'
+p525
+tp526
+a(S'crystal dumplings'
+p527
+S'299'
+p528
+tp529
+a(S'traditional peking dumplings'
+p530
+S'309'
+p531
+tp532
+a(S'street style spicy dumplings'
+p533
+S'309'
+p534
+tp535
+a(S'old school gyoza '
+p536
+S'279'
+p537
+tp538
+a(S'prawn and celery dumplings'
+p539
+S'359'
+p540
+tp541
+a(S'rainbow chicken dumplings'
+p542
+S'319'
+p543
+tp544
+a(S'soggy thai basil fried rice'
+p545
+S'499'
+p546
+tp547
+a(S'teriyaki meal in a bowl'
+p548
+S'539'
+p549
+tp550
+a(S'spicy bangkok bowl'
+p551
+S'429'
+p552
+tp553
+a(S"street vendor's panang curry bowl"
+p554
+S'499'
+p555
+tp556
+a(S'fiery thai shrimp fried rice with asian green chilli chicken ribbons'
+p557
+S'569'
+p558
+tp559
+a(S'smoky BBQ pork belly bowl'
+p560
+S'709'
+p561
+tp562
+a(S'mamagoto goreng'
+p563
+S'559'
+p564
+tp565
+a(S'saigon bowl'
+p566
+S'459'
+p567
+tp568
+a(S'the laksa tribute'
+p569
+S'499'
+p570
+tp571
+a(S'osaka tube station bowl'
+p572
+S'519'
+p573
+tp574
+a(S"mama's spicy ramen bowl"
+p575
+S'519'
+p576
+tp577
+a(S"mamagoto's chicken broth"
+p578
+S'539'
+p579
+tp580
+a(S'stri fried udon noodles prawn'
+p581
+S'659'
+p582
+tp583
+a(S'hawkers noodles '
+p584
+S'339'
+p585
+tp586
+a(S'bali bamie noodles'
+p587
+S'239'
+p588
+tp589
+a(S'hakka noodles'
+p590
+S'229'
+p591
+tp592
+a(S'fried rice'
+p593
+S'229'
+p594
+tp595
+a(S'steam rice'
+p596
+S'189'
+p597
+tp598
+a(S'sticky fried rice'
+p599
+S'269'
+p600
+tp601
+a(S'plain sticky rice'
+p602
+S'209'
+p603
+tp604
+a(S'yangchow champions fried rice'
+p605
+S'309'
+p606
+tp607
+a(S"london's china town prawn"
+p608
+S'549'
+p609
+tp610
+a(S"prawn in mama's sauce"
+p611
+S'649'
+p612
+tp613
+a(S'prawn three pepper bomb'
+p614
+S'649'
+p615
+tp616
+a(S'shrimp & tofu home style'
+p617
+S'549'
+p618
+tp619
+a(S'fresh & hot steamed fish '
+p620
+S'439'
+p621
+tp622
+a(S'crispy fish fillet'
+p623
+S'399'
+p624
+tp625
+a(S'steamed fish'
+p626
+S'379'
+p627
+tp628
+a(S'thai red or green curry'
+p629
+S'379'
+p630
+tp631
+a(S'masaman curry'
+p632
+S'439'
+p633
+tp634
+a(S'rendang curry chicken '
+p635
+S'549'
+p636
+tp637
+atp638
+sS'18375545'
+p639
+(S'3.3'
+p640
+(lp641
+(S'single idly'
+p642
+S'15'
+p643
+tp644
+a(S'single vada'
+p645
+S'20'
+p646
+tp647
+a(S'single idly vada'
+p648
+S'35'
+p649
+tp650
+a(S'double idly'
+p651
+S'30'
+p652
+tp653
+a(S'double idly vada'
+p654
+S'50'
+p655
+tp656
+a(S'pickle dosa'
+p657
+S'45'
+p658
+tp659
+a(S'vegetable dosa'
+p660
+S'45'
+p661
+tp662
+a(S'avalakki dosa'
+p663
+S'45'
+p664
+tp665
+a(S'paddu'
+p666
+S'35'
+p667
+tp668
+a(S'kesari bath'
+p669
+S'30'
+p670
+tp671
+a(S'ghee upma'
+p672
+S'30'
+p673
+tp674
+a(S'shavige bath'
+p675
+S'35'
+p676
+tp677
+a(S'obattu'
+p678
+S'25'
+p679
+tp680
+a(S'anjoor halwa'
+p681
+S'30'
+p682
+tp683
+a(S'filter coffee'
+p684
+S'15'
+p685
+tp686
+a(S'masala chai'
+p687
+S'15'
+p688
+tp689
+a(S'lemon chai'
+p690
+S'20'
+p691
+tp692
+atp693
+sS'61111'
+p694
+(S'4.9'
+p695
+(lp696
+(S'Crunch Slice'
+p697
+S'140'
+p698
+tp699
+a(S'Ice Cream Cake Slice'
+p700
+S'140'
+p701
+tp702
+a(S'Truffle Ice Cream'
+p703
+S'210'
+p704
+tp705
+a(S'Cherry'
+p706
+S'210'
+p707
+tp708
+a(S'Coffee'
+p709
+S'180'
+p710
+tp711
+a(S'Chocolate '
+p712
+S'210'
+p713
+tp714
+a(S'Fresh fruit salad'
+p715
+S'250'
+p716
+tp717
+a(S'Banana split'
+p718
+S'210'
+p719
+tp720
+a(S'Strawberry'
+p721
+S'250'
+p722
+tp723
+a(S'Cones Ice cream'
+p724
+S'40'
+p725
+tp726
+a(S'Cups Ice cream small'
+p727
+S'100'
+p728
+tp729
+a(S'Cups Ice cream medium'
+p730
+S'150'
+p731
+tp732
+a(S'Cups ice cream large'
+p733
+S'180'
+p734
+tp735
+a(S'Frappe ice cream shake'
+p736
+S'140'
+p737
+tp738
+a(S'Affogato al Caffe'
+p739
+S'180'
+p740
+tp741
+a(S'Spagnola'
+p742
+S'210'
+p743
+tp744
+a(S'Ice cream to go 250g'
+p745
+S'240'
+p746
+tp747
+a(S'Ice cream to go 1/2 kg'
+p748
+S'450'
+p749
+tp750
+a(S'Ice cream to go 1 kg'
+p751
+S'850'
+p752
+tp753
+a(S'Ice cream cake 1kg'
+p754
+S'1200'
+p755
+tp756
+atp757
+sS'52459'
+p758
+(S'4.7'
+p759
+(lp760
+(S'idly (2 pieces)'
+p761
+S'20'
+p762
+tp763
+a(S'vade'
+p764
+S'20'
+p765
+tp766
+a(S'rava idly (1 piece)'
+p767
+S'25'
+p768
+tp769
+a(S'masale dose'
+p770
+S'40'
+p771
+tp772
+a(S'benne masale dose'
+p773
+S'45'
+p774
+tp775
+a(S'benne plain dose'
+p776
+S'41'
+p777
+tp778
+a(S'plain dose'
+p779
+S'35'
+p780
+tp781
+a(S'set dose'
+p782
+S'40'
+p783
+tp784
+a(S'khali dose'
+p785
+S'35'
+p786
+tp787
+a(S'rice bath'
+p788
+S'30'
+p789
+tp790
+a(S'poori'
+p791
+S'40'
+p792
+tp793
+a(S'kesar bath'
+p794
+S'22'
+p795
+tp796
+a(S'khara bath'
+p797
+S'20'
+p798
+tp799
+a(S'chow chow bath'
+p800
+S'37'
+p801
+tp802
+a(S'madduru vade'
+p803
+S'25'
+p804
+tp805
+a(S'mangaluru bhajji'
+p806
+S'25'
+p807
+tp808
+a(S'kapi tea / badami halu'
+p809
+S'15'
+p810
+tp811
+atp812
+sS'58243'
+p813
+(S'4.2'
+p814
+(lp815
+(S'spict soya spring rolls'
+p816
+S'100'
+p817
+tp818
+a(S'corn and scallion fritters'
+p819
+S'100'
+p820
+tp821
+a(S'tofu and spinach wonton'
+p822
+S'100'
+p823
+tp824
+a(S'pan fried spinach cheong fan'
+p825
+S'100'
+p826
+tp827
+a(S'pan fried chicken dim sum'
+p828
+S'100'
+p829
+tp830
+a(S'chicken and glass noodles spring rolls'
+p831
+S'100'
+p832
+tp833
+a(S'pan fried lamb wotif'
+p834
+S'100'
+p835
+tp836
+a(S'crispy prawn cheong fan'
+p837
+S'100'
+p838
+tp839
+a(S'sesame prawn toast'
+p840
+S'100'
+p841
+tp842
+a(S'fried cracker prawn '
+p843
+S'100'
+p844
+tp845
+a(S'threaded crab dumplings'
+p846
+S'100'
+p847
+tp848
+a(S'mushroom satay'
+p849
+S'275'
+p850
+tp851
+a(S'chicken satay'
+p852
+S'275'
+p853
+tp854
+a(S'tofu satay'
+p855
+S'275'
+p856
+tp857
+a(S'indonesian grilled prawns skewers with ripe papaya salsa'
+p858
+S'275'
+p859
+tp860
+a(S'apricot glazed cauliflower in noodle bas'
+p861
+S'325'
+p862
+tp863
+a(S'crispy water chestnuts and banboo shoots with chilli lemongrass'
+p864
+S'325'
+p865
+tp866
+a(S'tofu chilli pepper with five salt'
+p867
+S'350'
+p868
+tp869
+a(S'shanghai chillli potatoes with celery'
+p870
+S'325'
+p871
+tp872
+a(S'baby corn with roasted chilli paste'
+p873
+S'325'
+p874
+tp875
+a(S'lotus stem with honey chilli'
+p876
+S'325'
+p877
+tp878
+a(S'tim tai chili chicken'
+p879
+S'375'
+p880
+tp881
+a(S'stuffed chicken wings with glass noodles water chestnuts'
+p882
+S'375'
+p883
+tp884
+a(S'thai style grilled chiecken with green apple som tam'
+p885
+S'375'
+p886
+tp887
+a(S'chicken with roasted chilli paste'
+p888
+S'375'
+p889
+tp890
+a(S'banana wrapped grilled chicken with sambal oelek'
+p891
+S'375'
+p892
+tp893
+a(S'crispy lamb with spring onion and garlic flakes'
+p894
+S'475'
+p895
+tp896
+a(S'prawns with chilli sambal long beans and cherry tomatoes '
+p897
+S'525'
+p898
+tp899
+a(S'thai garlic pepper prawns with bell pepper'
+p900
+S'525'
+p901
+tp902
+a(S'banana leaf wrapped fish with balinese spices'
+p903
+S'425'
+p904
+tp905
+a(S'crispy fish chilli pepper'
+p906
+S'425'
+p907
+tp908
+a(S'ped tod namprik pow'
+p909
+S'450'
+p910
+tp911
+a(S'thai green curry'
+p912
+S'300'
+p913
+tp914
+a(S'thai red curry'
+p915
+S'300'
+p916
+tp917
+a(S'red jungle curry'
+p918
+S'300'
+p919
+tp920
+a(S'thai massaman curry'
+p921
+S'300'
+p922
+tp923
+a(S'penang curry'
+p924
+S'300'
+p925
+tp926
+a(S'burmese curry '
+p927
+S'300'
+p928
+tp929
+a(S'malaysian curry'
+p930
+S'300'
+p931
+tp932
+a(S'laotian curry'
+p933
+S'300'
+p934
+tp935
+a(S'western sumatran lamb curry'
+p936
+S'300'
+p937
+tp938
+a(S'pineapple curry with prawns and lychees'
+p939
+S'300'
+p940
+tp941
+a(S'fiery sri lankan curry with cherry tomatoes'
+p942
+S'300'
+p943
+tp944
+a(S'burmese pan fried noodles with curry sauce'
+p945
+S'300'
+p946
+tp947
+a(S'singapore rice vermicelli noodles'
+p948
+S'300'
+p949
+tp950
+a(S'prad thai'
+p951
+S'300'
+p952
+tp953
+a(S'prad kee mao'
+p954
+S'300'
+p955
+tp956
+a(S'malaysian kway teow'
+p957
+S'300'
+p958
+tp959
+a(S'shanghai noodles'
+p960
+S'300'
+p961
+tp962
+a(S'burmese khaw swe'
+p963
+S'300'
+p964
+tp965
+a(S'singaporean laksa'
+p966
+S'300'
+p967
+tp968
+a(S'khao pahd'
+p969
+S'300'
+p970
+tp971
+a(S'garlic fried rice with broccoli'
+p972
+S'300'
+p973
+tp974
+a(S'black olive fried rice'
+p975
+S'300'
+p976
+tp977
+a(S'nasi goreng'
+p978
+S'300'
+p979
+tp980
+a(S'quick fried mix vegetable with ginger wine sauce'
+p981
+S'325'
+p982
+tp983
+a(S'broccoli and spinach with yellow brean sauce'
+p984
+S'325'
+p985
+tp986
+a(S'malaysian style spicy braised green beans'
+p987
+S'325'
+p988
+tp989
+a(S'water chestnuts and shiitake with black pepper sauce'
+p990
+S'325'
+p991
+tp992
+a(S'tofu with exotic mushroom'
+p993
+S'350'
+p994
+tp995
+a(S'potatoes with spicy black bean sauce'
+p996
+S'325'
+p997
+tp998
+a(S'seasonal vegetable in chilli basil sauce'
+p999
+S'325'
+p1000
+tp1001
+a(S'mushroom and spinach with soya chilli sauce'
+p1002
+S'325'
+p1003
+tp1004
+a(S'ma po tofu with bell pepper and chinese spices'
+p1005
+S'350'
+p1006
+tp1007
+a(S'hong kong vegetables with sesame soya'
+p1008
+S'325'
+p1009
+tp1010
+a(S'kung pao chicken with burnt chillies. bell pepper and cashew nuts'
+p1011
+S'375'
+p1012
+tp1013
+a(S'malaysian family style chicken'
+p1014
+S'375'
+p1015
+tp1016
+a(S'chicken grapow with hot basil chillies and kaffir lime leaves'
+p1017
+S'375'
+p1018
+tp1019
+a(S'chicken with shitake and water chestnuts'
+p1020
+S'400'
+p1021
+tp1022
+a(S'lamb with young peppercorns and thai herbs'
+p1023
+S'475'
+p1024
+tp1025
+a(S'lamb & leeks with black pepper sauce'
+p1026
+S'475'
+p1027
+tp1028
+a(S'lamb & bamboo shoots with black bean sauce'
+p1029
+S'475'
+p1030
+tp1031
+a(S'"sweet & sour prawns with pineapple'
+p1032
+S' lychees'
+p1033
+tp1034
+a(S'pepper prawns with baby corm & mushrooms'
+p1035
+S'525'
+p1036
+tp1037
+a(S'vietnamese spicy prawns with lemongrass'
+p1038
+S'525'
+p1039
+tp1040
+a(S'prawns with mushroom bell pepper chilli & basil'
+p1041
+S'525'
+p1042
+tp1043
+a(S'fish with chinese greens '
+p1044
+S'425'
+p1045
+tp1046
+a(S'tamarind fish with red chillies & kaffir lime leaves'
+p1047
+S'425'
+p1048
+tp1049
+a(S'pla tod samroad'
+p1050
+S'425'
+p1051
+tp1052
+a(S'fish with roasted chilli sauce & basil'
+p1053
+S'425'
+p1054
+tp1055
+a(S'poo phad pong ka ree'
+p1056
+S'750'
+p1057
+tp1058
+a(S'singapore chilli crab'
+p1059
+S'750'
+p1060
+tp1061
+a(S'hakka noodles '
+p1062
+S'300'
+p1063
+tp1064
+a(S'indonesian bamee goreng'
+p1065
+S'300'
+p1066
+tp1067
+a(S'thai chilli basil noodles '
+p1068
+S'300'
+p1069
+tp1070
+a(S'vietnamese pho noodles soup and aromatic herbs and spices'
+p1071
+S'300'
+p1072
+tp1073
+a(S'udon noodles soup with aromatic broth on fresh garden asian greens'
+p1074
+S'300'
+p1075
+tp1076
+a(S'tim tai special chilli coriander noodels'
+p1077
+S'300'
+p1078
+tp1079
+a(S'yang zhou fried rice'
+p1080
+S'300'
+p1081
+tp1082
+a(S'ginger and capsicum fried rice'
+p1083
+S'300'
+p1084
+tp1085
+a(S'steam rice'
+p1086
+S'160'
+p1087
+tp1088
+a(S'crabmeat omellete'
+p1089
+S'250'
+p1090
+tp1091
+a(S'hand cut potato fries with tom yum salt'
+p1092
+S'200'
+p1093
+tp1094
+atp1095
+sS'58576'
+p1096
+(S'4.9'
+p1097
+(lp1098
+(S'idli(Single)'
+p1099
+S'10'
+p1100
+tp1101
+a(S'vada'
+p1102
+S'10'
+p1103
+tp1104
+a(S'kesaribath'
+p1105
+S'15'
+p1106
+tp1107
+a(S'kharabath'
+p1108
+S'15'
+p1109
+tp1110
+a(S'chowchow bhath'
+p1111
+S'25'
+p1112
+tp1113
+a(S'masala dose'
+p1114
+S'20'
+p1115
+tp1116
+a(S'plain dose'
+p1117
+S'20'
+p1118
+tp1119
+a(S'extra palya'
+p1120
+S'10'
+p1121
+tp1122
+a(S'butter'
+p1123
+S'10'
+p1124
+tp1125
+a(S'half coffee'
+p1126
+S'10'
+p1127
+tp1128
+a(S'half tea'
+p1129
+S'10'
+p1130
+tp1131
+a(S'half badam milk'
+p1132
+S'20'
+p1133
+tp1134
+a(S'half horlicks'
+p1135
+S'20'
+p1136
+tp1137
+atp1138
+sS'58786'
+p1139
+(S'3.9'
+p1140
+(lp1141
+(S'gulab jamun biskit'
+p1142
+S'30'
+p1143
+tp1144
+a(S'aam ka panna'
+p1145
+S'30'
+p1146
+tp1147
+a(S'paneer ghewar'
+p1148
+S'30'
+p1149
+tp1150
+a(S'matar kachori'
+p1151
+S'30'
+p1152
+tp1153
+a(S'paneer kuttu pakoda'
+p1154
+S'30'
+p1155
+tp1156
+a(S'urad dal samosa'
+p1157
+S'30'
+p1158
+tp1159
+a(S'dahi gujiya'
+p1160
+S'30'
+p1161
+tp1162
+a(S'kachumbar'
+p1163
+S'30'
+p1164
+tp1165
+a(S'green chutney'
+p1166
+S'30'
+p1167
+tp1168
+a(S'garlic chutney'
+p1169
+S'30'
+p1170
+tp1171
+a(S'pickle'
+p1172
+S'30'
+p1173
+tp1174
+a(S'fried papad'
+p1175
+S'30'
+p1176
+tp1177
+a(S'dal panchmel'
+p1178
+S'100'
+p1179
+tp1180
+a(S'matar paneer baati'
+p1181
+S'100'
+p1182
+tp1183
+a(S'ghee choorma'
+p1184
+S'100'
+p1185
+tp1186
+a(S'maharaja paneer'
+p1187
+S'100'
+p1188
+tp1189
+a(S'methi magodi'
+p1190
+S'100'
+p1191
+tp1192
+a(S'aloo petha'
+p1193
+S'100'
+p1194
+tp1195
+a(S'bharwan kofta'
+p1196
+S'100'
+p1197
+tp1198
+a(S'raabdi'
+p1199
+S'100'
+p1200
+tp1201
+a(S'imlana'
+p1202
+S'100'
+p1203
+tp1204
+a(S'do chonk ki dal'
+p1205
+S'100'
+p1206
+tp1207
+a(S'chilla ki kadhi'
+p1208
+S'100'
+p1209
+tp1210
+a(S'shahi gulab jamun'
+p1211
+S'100'
+p1212
+tp1213
+a(S'chikoo halwa'
+p1214
+S'100'
+p1215
+tp1216
+a(S'fulka'
+p1217
+S'20'
+p1218
+tp1219
+a(S'missi roti'
+p1220
+S'20'
+p1221
+tp1222
+a(S'urad dal kachawdi'
+p1223
+S'20'
+p1224
+tp1225
+a(S'hari moong dal ki kheechdi'
+p1226
+S'20'
+p1227
+tp1228
+a(S'chole ka pulao'
+p1229
+S'20'
+p1230
+tp1231
+a(S'steamed rice'
+p1232
+S'20'
+p1233
+tp1234
+atp1235
+sS'51065'
+p1236
+(S'4.2'
+p1237
+(lp1238
+(S'masala dose'
+p1239
+S'43'
+p1240
+tp1241
+a(S'plain dose'
+p1242
+S'40'
+p1243
+tp1244
+a(S'sagu masala dose'
+p1245
+S'45'
+p1246
+tp1247
+a(S'rava vada'
+p1248
+S'22'
+p1249
+tp1250
+a(S'kharabath/uppittu'
+p1251
+S'25'
+p1252
+tp1253
+a(S'kesaribath'
+p1254
+S'25'
+p1255
+tp1256
+a(S'chow chow bath'
+p1257
+S'50'
+p1258
+tp1259
+a(S'idly (single)'
+p1260
+S'13'
+p1261
+tp1262
+a(S'idly (per plate)'
+p1263
+S'25'
+p1264
+tp1265
+a(S'uddin vada'
+p1266
+S'25'
+p1267
+tp1268
+a(S'poori (single)'
+p1269
+S'17'
+p1270
+tp1271
+a(S'poori (per plate)'
+p1272
+S'32'
+p1273
+tp1274
+a(S'coffee / tea'
+p1275
+S'15'
+p1276
+tp1277
+a(S'1 idly - vada'
+p1278
+S'38'
+p1279
+tp1280
+a(S'2 idly - vada'
+p1281
+S'50'
+p1282
+tp1283
+a(S'extra butter / sagu / sambar'
+p1284
+S'5'
+p1285
+tp1286
+atp1287
+sS'57141'
+p1288
+(S'4'
+p1289
+(lp1290
+(S'aloo pyaaz pakoras'
+p1291
+S'100'
+p1292
+tp1293
+a(S'bread paneer pakoras '
+p1294
+S'110'
+p1295
+tp1296
+a(S'french fries '
+p1297
+S'110'
+p1298
+tp1299
+a(S'assorted pakoras'
+p1300
+S'120'
+p1301
+tp1302
+a(S'french fries punjabi style'
+p1303
+S'140'
+p1304
+tp1305
+a(S'kalmi punjbai sticks'
+p1306
+S'140'
+p1307
+tp1308
+a(S'cheese pataka balls'
+p1309
+S'150'
+p1310
+tp1311
+a(S'puri aloo '
+p1312
+S'110'
+p1313
+tp1314
+a(S'puri chole '
+p1315
+S'120'
+p1316
+tp1317
+a(S'kachori aloo'
+p1318
+S'130'
+p1319
+tp1320
+a(S'chole kulcha'
+p1321
+S'140'
+p1322
+tp1323
+a(S'chole bhature'
+p1324
+S'130'
+p1325
+tp1326
+a(S'pindi chole bhature'
+p1327
+S'140'
+p1328
+tp1329
+a(S'aloo jeera'
+p1330
+S'120'
+p1331
+tp1332
+a(S'aloo gobhi dry'
+p1333
+S'140'
+p1334
+tp1335
+a(S'gobhi masala dery'
+p1336
+S'160'
+p1337
+tp1338
+a(S'aloo gobhi masala gravy'
+p1339
+S'160'
+p1340
+tp1341
+a(S'rajma'
+p1342
+S'170'
+p1343
+tp1344
+a(S'chole'
+p1345
+S'180'
+p1346
+tp1347
+a(S'pindi chole bhature'
+p1348
+S'180'
+p1349
+tp1350
+a(S'mix veg dry'
+p1351
+S'200'
+p1352
+tp1353
+a(S'baigan bharta'
+p1354
+S'200'
+p1355
+tp1356
+a(S'veg kadai'
+p1357
+S'200'
+p1358
+tp1359
+a(S'veg kolapuri'
+p1360
+S'200'
+p1361
+tp1362
+a(S'matar panner'
+p1363
+S'200'
+p1364
+tp1365
+a(S'paneer butter masala'
+p1366
+S'200'
+p1367
+tp1368
+a(S'palak paneer'
+p1369
+S'200'
+p1370
+tp1371
+a(S'kadai paneer'
+p1372
+S'220'
+p1373
+tp1374
+a(S'paneer do pyaaza'
+p1375
+S'220'
+p1376
+tp1377
+a(S'paneer bhurji'
+p1378
+S'230'
+p1379
+tp1380
+a(S'shahi paneer'
+p1381
+S'240'
+p1382
+tp1383
+a(S'paneer labadar'
+p1384
+S'250'
+p1385
+tp1386
+a(S'punjabi dal tadka'
+p1387
+S'160'
+p1388
+tp1389
+a(S'dhabe ki dal'
+p1390
+S'180'
+p1391
+tp1392
+a(S'kadhi'
+p1393
+S'180'
+p1394
+tp1395
+a(S'dal makhani'
+p1396
+S'220'
+p1397
+tp1398
+a(S'aloo paratha '
+p1399
+S'50'
+p1400
+tp1401
+a(S'aloo pyaaz paratha'
+p1402
+S'60'
+p1403
+tp1404
+a(S'gobhi paratha'
+p1405
+S'80'
+p1406
+tp1407
+a(S'onion paratha'
+p1408
+S'80'
+p1409
+tp1410
+a(S'mix paratha'
+p1411
+S'90'
+p1412
+tp1413
+a(S'paneer paratha'
+p1414
+S'100'
+p1415
+tp1416
+a(S'matar paratha'
+p1417
+S'100'
+p1418
+tp1419
+a(S'cheese paratha'
+p1420
+S'150'
+p1421
+tp1422
+a(S'white butter'
+p1423
+S'40'
+p1424
+tp1425
+a(S'chilli onion rice'
+p1426
+S'180'
+p1427
+tp1428
+a(S'matar pulao'
+p1429
+S'190'
+p1430
+tp1431
+a(S'paneer pulao'
+p1432
+S'210'
+p1433
+tp1434
+a(S'shahi pulao'
+p1435
+S'260'
+p1436
+tp1437
+atp1438
+sS'52228'
+p1439
+(S'4.2'
+p1440
+(lp1441
+(S'tandoori guchchi'
+p1442
+S'845'
+p1443
+tp1444
+a(S'paneer tikka multani'
+p1445
+S'445'
+p1446
+tp1447
+a(S'tandoori broccoli'
+p1448
+S'445'
+p1449
+tp1450
+a(S'harra bharra kebab'
+p1451
+S'395'
+p1452
+tp1453
+a(S'beetroot peanut tikki'
+p1454
+S'395'
+p1455
+tp1456
+a(S'mirch malai seekh'
+p1457
+S'395'
+p1458
+tp1459
+a(S'bharwaan khumb peshawari'
+p1460
+S'395'
+p1461
+tp1462
+a(S'subz ki khaam khartai'
+p1463
+S'395'
+p1464
+tp1465
+a(S'veg kurkuri'
+p1466
+S'395'
+p1467
+tp1468
+a(S'lahori seekh'
+p1469
+S'395'
+p1470
+tp1471
+a(S'bhutteyan de kebab'
+p1472
+S'395'
+p1473
+tp1474
+a(S'dahi ke kebab'
+p1475
+S'395'
+p1476
+tp1477
+a(S'bharwaan aloo pothohari'
+p1478
+S'395'
+p1479
+tp1480
+a(S'tandoori gobhi'
+p1481
+S'375'
+p1482
+tp1483
+a(S'veg kebab platter'
+p1484
+S'675'
+p1485
+tp1486
+a(S'punjab grill exotic seafood platter'
+p1487
+S'1650'
+p1488
+tp1489
+a(S'tandoori lobster'
+p1490
+S'1450'
+p1491
+tp1492
+a(S'tandoori duck'
+p1493
+S'1195'
+p1494
+tp1495
+a(S'tandoori crab'
+p1496
+S'995'
+p1497
+tp1498
+a(S'tawa jheenga'
+p1499
+S'895'
+p1500
+tp1501
+a(S'tandoori jheenga'
+p1502
+S'895'
+p1503
+tp1504
+a(S'salmon tikka'
+p1505
+S'895'
+p1506
+tp1507
+a(S'tandoori pomfret'
+p1508
+S'725'
+p1509
+tp1510
+a(S'ajwaini fish tikka'
+p1511
+S'725'
+p1512
+tp1513
+a(S'fish amritsari'
+p1514
+S'625'
+p1515
+tp1516
+a(S'chaamp taajdar'
+p1517
+S'625'
+p1518
+tp1519
+a(S'kakori seekh kebab'
+p1520
+S'495'
+p1521
+tp1522
+a(S'raan-e-sikandari'
+p1523
+S'895'
+p1524
+tp1525
+a(S'khaam khatai '
+p1526
+S'495'
+p1527
+tp1528
+a(S'ghee roast mutton boti'
+p1529
+S'595'
+p1530
+tp1531
+a(S'tandoori murgh'
+p1532
+S'695'
+p1533
+tp1534
+a(S'bhatti da murgh'
+p1535
+S'525'
+p1536
+tp1537
+a(S'murgh tikka punjab grill'
+p1538
+S'495'
+p1539
+tp1540
+a(S'murgh malai tikka'
+p1541
+S'495'
+p1542
+tp1543
+a(S'chicken kurkuri'
+p1544
+S'450'
+p1545
+tp1546
+a(S'raunaqueen seekhan '
+p1547
+S'525'
+p1548
+tp1549
+a(S'non-veg kebab platter'
+p1550
+S'795'
+p1551
+tp1552
+a(S'bharwaan kesari guchchi'
+p1553
+S'825'
+p1554
+tp1555
+a(S'malai chena pedas'
+p1556
+S'425'
+p1557
+tp1558
+a(S'paneer lababdar'
+p1559
+S'425'
+p1560
+tp1561
+a(S'paneer makhani'
+p1562
+S'425'
+p1563
+tp1564
+a(S'patialashahi kadhai paneer'
+p1565
+S'425'
+p1566
+tp1567
+a(S'palak paneer'
+p1568
+S'425'
+p1569
+tp1570
+a(S'amritsari malai kofta'
+p1571
+S'425'
+p1572
+tp1573
+a(S'tawa vegetables'
+p1574
+S'425'
+p1575
+tp1576
+a(S'khumb hara dhaniya pyaza'
+p1577
+S'425'
+p1578
+tp1579
+a(S'subziyaan de millniyan'
+p1580
+S'425'
+p1581
+tp1582
+a(S'martaban de charra aloo'
+p1583
+S'395'
+p1584
+tp1585
+a(S'sarson da saag'
+p1586
+S'395'
+p1587
+tp1588
+a(S'kadhi pakoda'
+p1589
+S'395'
+p1590
+tp1591
+a(S'dal punjab grill '
+p1592
+S'425'
+p1593
+tp1594
+a(S'rawalpindi channa'
+p1595
+S'395'
+p1596
+tp1597
+a(S'dal panjratani'
+p1598
+S'395'
+p1599
+tp1600
+a(S'punjab grill deg hot pot chicken'
+p1601
+S'475'
+p1602
+tp1603
+a(S'dhaniya mirchi da kukkad'
+p1604
+S'475'
+p1605
+tp1606
+a(S'murgh makhni'
+p1607
+S'475'
+p1608
+tp1609
+a(S'kadhai murgh'
+p1610
+S'475'
+p1611
+tp1612
+a(S'murgh lababdar'
+p1613
+S'475'
+p1614
+tp1615
+a(S'meat punjab grill'
+p1616
+S'545'
+p1617
+tp1618
+a(S'raarhya meat'
+p1619
+S'545'
+p1620
+tp1621
+a(S'nalli gosht'
+p1622
+S'550'
+p1623
+tp1624
+a(S'kadhai jheenga'
+p1625
+S'795'
+p1626
+tp1627
+a(S'patiala shahi machhi'
+p1628
+S'575'
+p1629
+tp1630
+atp1631
+sS'51490'
+p1632
+(S'2.5'
+p1633
+(lp1634
+(S'Tomato cream soup'
+p1635
+S'89'
+p1636
+tp1637
+a(S'Cream veg soup'
+p1638
+S'89'
+p1639
+tp1640
+a(S'Mix veg soup'
+p1641
+S'89'
+p1642
+tp1643
+a(S'Sweet corn soup'
+p1644
+S'89'
+p1645
+tp1646
+a(S'Veg Manchow soup'
+p1647
+S'99'
+p1648
+tp1649
+a(S'Hot & Sour veg soup'
+p1650
+S'99'
+p1651
+tp1652
+a(S'Stuff tikki'
+p1653
+S'119'
+p1654
+tp1655
+a(S'Hara bhara kabab'
+p1656
+S'129'
+p1657
+tp1658
+a(S'Milejule pakode '
+p1659
+S'129'
+p1660
+tp1661
+a(S'Finger chips (potato)'
+p1662
+S'119'
+p1663
+tp1664
+a(S'panner tikka'
+p1665
+S'159'
+p1666
+tp1667
+a(S'Panner pakoda'
+p1668
+S'139'
+p1669
+tp1670
+a(S'pudina panner tikka'
+p1671
+S'159'
+p1672
+tp1673
+a(S'chilli panner '
+p1674
+S'149'
+p1675
+tp1676
+a(S'baby corn manchurian'
+p1677
+S'139'
+p1678
+tp1679
+a(S'baby corn chilly'
+p1680
+S'139'
+p1681
+tp1682
+a(S'baby corn pepper dry'
+p1683
+S'139'
+p1684
+tp1685
+a(S'gobi machurian'
+p1686
+S'139'
+p1687
+tp1688
+a(S'mixed vegetable'
+p1689
+S'129'
+p1690
+tp1691
+a(S'kadai subzi'
+p1692
+S'129'
+p1693
+tp1694
+a(S'dum aloo kashmiri'
+p1695
+S'149'
+p1696
+tp1697
+a(S'dum aloo banarsi'
+p1698
+S'139'
+p1699
+tp1700
+a(S'deshi dum aloo'
+p1701
+S'139'
+p1702
+tp1703
+a(S'palak kofta '
+p1704
+S'159'
+p1705
+tp1706
+a(S'palak paneer'
+p1707
+S'149'
+p1708
+tp1709
+a(S'aloo palak'
+p1710
+S'129'
+p1711
+tp1712
+a(S'Plain palak'
+p1713
+S'139'
+p1714
+tp1715
+a(S'aloo palak'
+p1716
+S'129'
+p1717
+tp1718
+a(S'Plain palak'
+p1719
+S'139'
+p1720
+tp1721
+a(S'shahi malai kofta'
+p1722
+S'169'
+p1723
+tp1724
+a(S'shahi malai paneer'
+p1725
+S'169'
+p1726
+tp1727
+a(S'shahi paneer'
+p1728
+S'149'
+p1729
+tp1730
+a(S'mutter paneer'
+p1731
+S'149'
+p1732
+tp1733
+a(S'kadai paneer'
+p1734
+S'149'
+p1735
+tp1736
+a(S'methi mutter malai'
+p1737
+S'179'
+p1738
+tp1739
+a(S'kaaju masala mutter'
+p1740
+S'199'
+p1741
+tp1742
+a(S'paneer butter masala'
+p1743
+S'159'
+p1744
+tp1745
+a(S'paneer tikka masala'
+p1746
+S'159'
+p1747
+tp1748
+a(S'chole masala'
+p1749
+S'139'
+p1750
+tp1751
+a(S'rajma masala'
+p1752
+S'139'
+p1753
+tp1754
+a(S'tawa veg'
+p1755
+S'139'
+p1756
+tp1757
+a(S'bhindi do pyaza'
+p1758
+S'139'
+p1759
+tp1760
+a(S'bhindi masala'
+p1761
+S'139'
+p1762
+tp1763
+a(S'bhindi chilli'
+p1764
+S'149'
+p1765
+tp1766
+a(S'gobi masala'
+p1767
+S'139'
+p1768
+tp1769
+a(S'paneer bhurji'
+p1770
+S'159'
+p1771
+tp1772
+a(S'jeera aloo'
+p1773
+S'119'
+p1774
+tp1775
+a(S'aloo do pyaza'
+p1776
+S'129'
+p1777
+tp1778
+a(S'aloo gobi mutter'
+p1779
+S'139'
+p1780
+tp1781
+a(S'aloo mutter'
+p1782
+S'129'
+p1783
+tp1784
+a(S'aloo gobi mutter'
+p1785
+S'129'
+p1786
+tp1787
+a(S'aloo methi'
+p1788
+S'129'
+p1789
+tp1790
+a(S'masaledar kerala \xe0\xb2\xb9\xe0\xb2\xbe\xe0\xb2\x97\xe0\xb2\xb2 \xe0\xb2\x95\xe0\xb2\xbe\xe0\xb2\xaf\xe0\xb2\xbf'
+p1791
+S'139'
+p1792
+tp1793
+a(S'bharwan mirchi'
+p1794
+S'139'
+p1795
+tp1796
+a(S'baingan ka bharta'
+p1797
+S'149'
+p1798
+tp1799
+a(S'Dal tadka highway style'
+p1800
+S'149'
+p1801
+tp1802
+a(S'palak dal'
+p1803
+S'149'
+p1804
+tp1805
+a(S'dal fry '
+p1806
+S'149'
+p1807
+tp1808
+a(S'dal makhani'
+p1809
+S'150'
+p1810
+tp1811
+a(S'kair sangri ki subzi'
+p1812
+S'189'
+p1813
+tp1814
+a(S'rajasthani kadhi'
+p1815
+S'129'
+p1816
+tp1817
+a(S'gatte ki subzi'
+p1818
+S'139'
+p1819
+tp1820
+a(S'stuffed tomato'
+p1821
+S'149'
+p1822
+tp1823
+a(S'sarson ka saag'
+p1824
+S'159'
+p1825
+tp1826
+a(S'dal bati choorma thali'
+p1827
+S'269'
+p1828
+tp1829
+a(S'extra bati '
+p1830
+S'49'
+p1831
+tp1832
+a(S'extra choorma'
+p1833
+S'69'
+p1834
+tp1835
+a(S'tawa roti'
+p1836
+S'13'
+p1837
+tp1838
+a(S'ghee tawa roti'
+p1839
+S'15'
+p1840
+tp1841
+a(S'tandoori roti'
+p1842
+S'30'
+p1843
+tp1844
+a(S'butter tandoori roti'
+p1845
+S'35'
+p1846
+tp1847
+a(S'plain naan'
+p1848
+S'40'
+p1849
+tp1850
+a(S'butter naan'
+p1851
+S'45'
+p1852
+tp1853
+a(S'garlick naan'
+p1854
+S'55'
+p1855
+tp1856
+a(S'butter kulcha'
+p1857
+S'45'
+p1858
+tp1859
+a(S'plain kulcha'
+p1860
+S'40'
+p1861
+tp1862
+a(S'stuff kulcha'
+p1863
+S'60'
+p1864
+tp1865
+a(S'stuff kulcha paneer'
+p1866
+S'70'
+p1867
+tp1868
+a(S'hasta roti'
+p1869
+S'40'
+p1870
+tp1871
+a(S'missi roti'
+p1872
+S'50'
+p1873
+tp1874
+a(S'makka roti'
+p1875
+S'40'
+p1876
+tp1877
+a(S'bajara roti'
+p1878
+S'40'
+p1879
+tp1880
+a(S'aloo/gobi/mooli paratha'
+p1881
+S'49'
+p1882
+tp1883
+a(S'paneer paratha'
+p1884
+S'59'
+p1885
+tp1886
+a(S'melhi paratha'
+p1887
+S'49'
+p1888
+tp1889
+a(S'sattoo paratha'
+p1890
+S'49'
+p1891
+tp1892
+a(S'ajwain paratha'
+p1893
+S'39'
+p1894
+tp1895
+a(S'plain paratha'
+p1896
+S'39'
+p1897
+tp1898
+a(S'lachha paratha'
+p1899
+S'59'
+p1900
+tp1901
+a(S'plain rice '
+p1902
+S'89'
+p1903
+tp1904
+a(S'jeera rice'
+p1905
+S'99'
+p1906
+tp1907
+a(S'fried rice'
+p1908
+S'129'
+p1909
+tp1910
+a(S'ghee rice'
+p1911
+S'109'
+p1912
+tp1913
+a(S'peas pulao'
+p1914
+S'129'
+p1915
+tp1916
+a(S'vegetable pulao'
+p1917
+S'129'
+p1918
+tp1919
+a(S'Onion tomato pulao'
+p1920
+S'129'
+p1921
+tp1922
+a(S'veg biryani'
+p1923
+S'149'
+p1924
+tp1925
+a(S'dum aloo biryani'
+p1926
+S'149'
+p1927
+tp1928
+a(S'yellow khichdi with papad'
+p1929
+S'109'
+p1930
+tp1931
+a(S'curd rice'
+p1932
+S'109'
+p1933
+tp1934
+a(S'green salad'
+p1935
+S'69'
+p1936
+tp1937
+a(S'sprouts salad'
+p1938
+S'69'
+p1939
+tp1940
+a(S'sada papad'
+p1941
+S'29'
+p1942
+tp1943
+a(S'masala papad'
+p1944
+S'49'
+p1945
+tp1946
+a(S'sda dahi'
+p1947
+S'39'
+p1948
+tp1949
+a(S'raitha'
+p1950
+S'59'
+p1951
+tp1952
+a(S'boondi raitha'
+p1953
+S'79'
+p1954
+tp1955
+a(S'pudina raitha'
+p1956
+S'59'
+p1957
+tp1958
+a(S'rajasthani lassi'
+p1959
+S'69'
+p1960
+tp1961
+a(S'lassi'
+p1962
+S'69'
+p1963
+tp1964
+a(S'kesari thandai'
+p1965
+S'79'
+p1966
+tp1967
+a(S'nimbu shikanji'
+p1968
+S'49'
+p1969
+tp1970
+a(S'jal jeera'
+p1971
+S'49'
+p1972
+tp1973
+a(S'chhach'
+p1974
+S'49'
+p1975
+tp1976
+a(S"gulab jammon 2 pc's"
+p1977
+S'69'
+p1978
+tp1979
+a(S'gulab jamoon 1 pc'
+p1980
+S'39'
+p1981
+tp1982
+a(S'malpoa'
+p1983
+S'109'
+p1984
+tp1985
+a(S'gajar ka halwa'
+p1986
+S'119'
+p1987
+tp1988
+a(S'moong dal ka halwa'
+p1989
+S'119'
+p1990
+tp1991
+a(S'ras gulla 2 pcs'
+p1992
+S'59'
+p1993
+tp1994
+a(S'ras gulla 1 pcs'
+p1995
+S'29'
+p1996
+tp1997
+a(S'mineral water'
+p1998
+S'39'
+p1999
+tp2000
+a(S'malpoa with rabdi'
+p2001
+S'129'
+p2002
+tp2003
+atp2004
+sS'58818'
+p2005
+(S'4.7'
+p2006
+(lp2007
+(S'Chocolat Belge '
+p2008
+S'120'
+p2009
+tp2010
+a(S'Go Nuts '
+p2011
+S'120'
+p2012
+tp2013
+a(S'Gold Maple Syrup'
+p2014
+S'110'
+p2015
+tp2016
+a(S'Saure Icing Sugar'
+p2017
+S'70'
+p2018
+tp2019
+a(S'Dollop Ice Cream'
+p2020
+S'100'
+p2021
+tp2022
+a(S'Chantilly Whipped Cream'
+p2023
+S'110'
+p2024
+tp2025
+a(S'saure Icing Sugar'
+p2026
+S'140'
+p2027
+tp2028
+a(S'Blush'
+p2029
+S'190'
+p2030
+tp2031
+a(S'Mikado'
+p2032
+S'150'
+p2033
+tp2034
+a(S'Winter Blast'
+p2035
+S'150'
+p2036
+tp2037
+a(S'Fruit Melba'
+p2038
+S'230'
+p2039
+tp2040
+a(S'Go Bananas '
+p2041
+S'170'
+p2042
+tp2043
+a(S'Nutcase'
+p2044
+S'170'
+p2045
+tp2046
+atp2047
+s.
