@@ -3,6 +3,7 @@ def ExactMatch(mention, menu_item):
         return True
     else:
         return False
+def horsepool(mention, menu_item):
 
 def partialMatch(mention, menu_item):
 	'''
