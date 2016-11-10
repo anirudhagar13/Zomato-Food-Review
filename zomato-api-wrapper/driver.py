@@ -1,6 +1,9 @@
 import zomatoApiModule
 import json
 import pickle
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Driver:
 	def __init__(self,api_key,output_type):
@@ -233,6 +236,7 @@ if __name__ == "__main__":
 	cuisine_id = d.getCuisineId("Boston","Spanish")
 	#restros = d.exhaustiveSearch("Boston",cuisine_id)	
 	restros =  d.search("Boston",cuisine_id)
+	'''
 	for i in restros.keys():
 		print "res_id = ", i
 		menu = d.getDailyMenu(i)
@@ -240,21 +244,33 @@ if __name__ == "__main__":
 			print "No menu available"
 		else:
 			print menu
-
+	'''
 	#print len(restros)
 	#print restros
-	'''
+	reviews = dict()
 	#code to print reviews - readable
 	for i in restros.keys():
 		rev = d.getReviews(i)
 		for j in rev:
+			j[0] = str(j[0])
+		reviews[i] = rev
+
+	'''
+		for j in rev:
+		for j in rev:
+			print "review text = ", j[0]
+			print "review rating = ", j[1]
+			print "\n#######################"
+		print "\n\n*****
 			print "review text = ", j[0]
 			print "review rating = ", j[1]
 			print "\n#######################"
 		print "\n\n******************************"
 	'''
-	#with open('restros.pickle', 'wb') as handle:
-	#	pickle.dump(restros, handle)
+	
+	print reviews
+	with open('../Reviews.json', 'wb') as handle:
+		json.dump(reviews, handle)
 
 	#with open('restros.pickle', 'rb') as handle:
 	#	restros = pickle.load(handle)
