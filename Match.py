@@ -1,12 +1,19 @@
-def partialMatch(mention_text, menu_item_text):
+def ExactMatch(mention, menu_item):
+    if mention == menu_item:
+        return True
+    else:
+        return False
+def horsepool(mention, menu_item):
+
+def partialMatch(mention, menu_item):
 	'''
 		a partial match occurs when more than
 		half of the words in the mention can be
 		found in the menu item's name and description
 	'''
 	words_matched = 0
-	words_mention = mention_text.split(" ")
-	words_menu = menu_item_text.split(" ")
+	words_mention = mention.split(" ")
+	words_menu = menu_item.split(" ")
 	if len(words_mention) <= len(words_menu):
 		for i in words_mention:
 			if i in words_menu:
@@ -21,14 +28,14 @@ def partialMatch(mention_text, menu_item_text):
 	else:
 		return False
 
-def Fuzzymatch(str1, str2, edit):
+def Fuzzymatch(mention, menu_item, edit):
     '''
         Create a table to store results of subproblems
         Compares edit distance between strings, equal
         if less than edit parameter.
     '''
-    m = len(str1)
-    n = len(str2)
+    m = len(mention)
+    n = len(menu_item)
     dp = [[0 for x in range(m+1)] for x in range(n+1)]
 
     # Initialize matrix
@@ -55,11 +62,11 @@ def Fuzzymatch(str1, str2, edit):
     else:
         return True
 
-def Substring(str1, str2):
+def Substring(mention, menu_item):
     '''
         Checks if either of strings part of the other
     '''
-    if str1 in str2 or str2 in str1:
+    if mention in menu_item or menu_item in mention:
         return True
     else:
         return False
