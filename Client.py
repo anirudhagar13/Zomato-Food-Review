@@ -36,6 +36,25 @@ def CompareItems(mentions, menus):
 
     return dic
 
+def Convert(rest_search):
+    dic = {}
+    for rest, info in rest_search:
+        for dish, dish_info in info:
+            price = dish_info[0]
+            dish_rating = dish_info[1]
+            popularity = dish_info[0]
+            if dic.has_key(dish):
+                val = dic[dish]
+                tup = (rest,price,dish_rating,popularity)
+                val.append(tup)
+                dic[dish] = val
+            else:
+                val = []
+                tup = (rest,price,dish_rating,popularity)
+                val.append(tup)
+                dic[dish] = val
+    return dic
+
 
 if __name__ == '__main__':
 
