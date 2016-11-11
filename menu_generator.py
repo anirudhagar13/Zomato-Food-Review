@@ -1,0 +1,37 @@
+import pickle
+
+big_tup = ()
+small_tup = ()
+lst = []
+rest = ''
+dic = {}
+dic2 = {}
+with open('menu.csv') as fp:
+    for line in fp:
+        line = line.rstrip()
+        ls = line.split(',')
+        if(ls[0] != ""):
+            if(rest != ''):
+                dic[rest_id] = (rate,lst)
+                dic2[rest_id] = rest
+                lst = []
+
+            rest = ls[0].lower()
+            rate = ls[1]
+            rest_id = ls[4]
+
+        menu = ls[2]
+        price = ls[3]
+        tup1 = (menu, price)
+        lst.append(tup1)
+
+    dic[rest_id] = (rate,lst)
+    dic2[rest_id] = rest
+
+print dic2
+#print dic
+with open('data/restname_id.pickle', 'wb') as handle:
+  pickle.dump(dic2, handle)
+with open('data/restid_menu.pickle', 'wb') as handle:
+  pickle.dump(dic, handle)
+
