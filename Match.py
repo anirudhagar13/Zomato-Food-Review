@@ -117,7 +117,6 @@ def FuzzyMatch(mention, menu_item, edit):
 
     # Edit distance @end position of matrix
     dist = dp[n][m]
-    print dist
     if dist > edit:
         return False
     else:

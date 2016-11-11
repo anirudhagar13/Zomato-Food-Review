@@ -5,9 +5,10 @@ if __name__ == "__main__":
     dirname2 = "Ratings/"
     with open('data/restname_id.pickle', 'rb') as f:
         mapping = pickle.load(f)
-    mapping = {int(k):v for k,v in mapping.items()}
+    #print mapping.values()
     rest_details = dict()
     for fname in os.listdir(dirname1):
+        #print fname[:-12]
         dictid = 0
         for root, dirs, files in os.walk(dirname2):
             for filename in files:
@@ -18,6 +19,7 @@ if __name__ == "__main__":
                             flg = False
                             dictid = res_id
                     ls = list()
+                    #print type(dictid)
                     rest_details[dictid] = dict()
                     f1 = open((dirname1+fname),'r')
                     f2 = open((dirname2+filename),'r')
@@ -25,19 +27,19 @@ if __name__ == "__main__":
                     lines2 = f1.read()
                     lines2 = lines2.split('-')
                     lines2.pop(0)
-                    s1 = len(lines)
-                    s2 = len(lines2)
+                    s1 = len(lines) #no of ratings
+                    s2 = len(lines2) # no of reviews
                     s = 0
                     if s1 < s2:
                         s = s1
                         lines2 = lines2[:s]
-                    elif s2 > s1:
+                    elif s2 < s1:
                         s = s2
                         lines = lines[:s]
                     for i in range(s):
                         review = lines2[i].strip()
                         rating = lines[i].rstrip()
-                        ls.append((rating,review))
+                        ls.append([review,float(rating)])
                     rest_details[dictid] = ls
                     #rest_details[fname[:-12]] = ls
                     '''
@@ -46,5 +48,7 @@ if __name__ == "__main__":
                         #print i[:-1],line.strip().split('\n')
                     '''
                     #print "*******************
-
-    print rest_details[58818]
+    #print rest_details['52459']
+    with open('data/Reviews.pkl', 'wb') as f:
+        pickle.dump(rest_details,f)
+    

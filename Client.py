@@ -18,58 +18,64 @@ def HierarchyMatch(mention, menu_item):
 
 def CompareItems(mentions, menus):
     dic = {}
-    for mention, stuff in mentions:
+    for mention, stuff in mentions.items():
         popularity = stuff[0]
         dish_rating = stuff[1]
         for menu_item in menus:
             price = menu_item[1]
-            if(HierarchyMatch(mention, menu_item[0])):
-                if(dic.has_key(menu_item[0])):
-                    val = dic[menu_item]
-                    val[2] += popularity
-                    val[1] += dish_rating
-                    dic[menu_item] = val
+            food = menu_item[0]
+            if(HierarchyMatch(mention, food)):
+            	if(dic.has_key(food)):
+                	val = dic[food]
+                	val[2] += popularity
+                	val[1] += dish_rating
+                	dic[food] = val
                 else:
-                    val = []
-                    val.append(price,dish_rating,popularity)
-                    dic[menu_item] = val
+                	dic[food] = [price,dish_rating,popularity]
+    return dic 
 
-    return dic
 
 def Convert(rest_search):
     dic = {}
-    for rest, info in rest_search:
-        for dish, dish_info in info:
-            price = dish_info[0]
-            dish_rating = dish_info[1]
-            popularity = dish_info[0]
-            if dic.has_key(dish):
-                val = dic[dish]
-                tup = (rest,price,dish_rating,popularity)
-                val.append(tup)
-                dic[dish] = val
-            else:
-                val = []
-                tup = (rest,price,dish_rating,popularity)
-                val.append(tup)
-                dic[dish] = val
+    for rest,info in rest_search.items():
+    	for dish, dish_info in info[1].items():
+    		price = dish_info[0]
+    		dish_rating = dish_info[1]
+    		popularity = dish_info[0]
+    		if dic.has_key(dish):
+    			val = dic[dish]
+    			tup = (rest,rest_rating,price,dish_rating,popularity)
+    			val.append(tup)
+    			dic[dish] = val
+    		else:
+    			val = []
+    			tup = (rest,rest_rating,price,dish_rating,popularity)
+    			val.append(tup)
+    			dic[dish] = val
     return dic
-
 
 if __name__ == '__main__':
 
     file = open("data/restid_menu.pickle",'r')
     menu = pickle.load(file)
-
+  
     file = open("data/tagged_mentions.pickle",'r')
     tagged_mentions = pickle.load(file)
-
+    
     rest_search = {}
-    for rest_id, menu_items in menu:
+    dish_mention = {}
+    for rest_id, menu_items in menu.items():
         rest_mentions = tagged_mentions[rest_id]
         rest_rating = menu_items[0]
-        items = menu_item[1]
+        items = menu_items[1]
+        
         dish_mention = CompareItems(rest_mentions, items)
         rest_search[rest_id] = (rest_rating, dish_mention)
 
     dish_search = Convert(rest_search)
+    
+    with open('data/rest_search.json', 'wb') as f:
+    	json.dump(rest_search,f)
+
+    with open('data/dish_search.json', 'wb') as f:
+    	json.dump(dish_search,f)
