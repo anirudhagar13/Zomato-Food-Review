@@ -2,6 +2,7 @@ import json
 import nltk
 from nltk.corpus import stopwords
 import sys
+import pickle
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -68,7 +69,6 @@ if __name__ == '__main__':
         for review, rating in reviews:
             processed = Preprocess(str(review))
             tagged = Postag(processed)
-            print tagged
             chunked = Chunking(tagged)
             parsed = set(Treeparse(chunked))
 
@@ -87,9 +87,10 @@ if __name__ == '__main__':
                     process_data[item] = [1, rating]
 
         # Putting menu generated via reviews against place
+        place = place.encode('utf-8')
         named_entity[place] = process_data
         process_data = {} # Done to process other place reviews
 
     # Writing JSON data
-    with open('NamedEntity.json', 'w') as f:
-         json.dump(named_entity, f)
+    with open('data/tagged_mentions.pickle', 'w') as f:
+         pickle.dump(named_entity, f)
