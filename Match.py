@@ -1,11 +1,71 @@
+from __future__ import division
+
 def ExactMatch(mention, menu_item):
+    '''
+        check for exact match of strings
+    '''
     if mention == menu_item:
         return True
     else:
         return False
-def horsepool(mention, menu_item):
 
-def partialMatch(mention, menu_item):
+def CharMatch(mention, menu_item):
+    '''
+        counts similar characters
+    '''
+    length1 = len(menu_item)
+    length2 = len(mention)
+    matched = 0
+    i,j,count,big = 0,0,0,0
+
+    if length1 == length2:
+        matched = [x == y for (x, y) in zip(mention, menu_item)].count(True)
+        return matched
+    elif length1 > length2:
+        while i < length1:
+            if j < length2 and menu_item[i] == mention[j]:
+                j += 1
+                count += 1
+            else:
+                if big < count:
+                    big = count
+                j = 0
+                count = 0
+            i += 1
+    else:
+        while i < length2:
+            if j < length1 and mention[i] == menu_item[j]:
+                j += 1
+                count += 1
+            else:
+                if big < count:
+                    big = count
+                j = 0
+                count = 0
+            i += 1
+
+    return big
+
+
+def PercentMatch(mention, menu_item, percent):
+    '''
+        counts the number of chars matched and should be above
+        certain percent of the smaller
+    '''
+    matched = CharMatch(mention, menu_item)
+    if len(mention) <= len(menu_item):
+        if percent < matched /len(mention):
+            return True
+        else:
+            return False
+    else:
+        if percent < matched /len(menu_item):
+            return True
+        else:
+            return False
+
+
+def PartialMatch(mention, menu_item):
 	'''
 		a partial match occurs when more than
 		half of the words in the mention can be
@@ -23,12 +83,12 @@ def partialMatch(mention, menu_item):
 			if i in words_mention:
 				words_matched += 1
 
-	if words_matched >= (len(words_mention)/2 + 1) :
+	if words_matched >= (len(words_mention)/2) :
 		return True
 	else:
 		return False
 
-def Fuzzymatch(mention, menu_item, edit):
+def FuzzyMatch(mention, menu_item, edit):
     '''
         Create a table to store results of subproblems
         Compares edit distance between strings, equal
@@ -48,7 +108,7 @@ def Fuzzymatch(mention, menu_item, edit):
     for i in range(1, n+1):
         for j in range(1, m+1):
             # If characters match
-            if str1[j-1] == str2[i-1]:
+            if mention[j-1] == menu_item[i-1]:
                 dp[i][j] = dp[i-1][j-1]
             else:
                 dp[i][j] = min( dp[i-1][j],
@@ -57,12 +117,13 @@ def Fuzzymatch(mention, menu_item, edit):
 
     # Edit distance @end position of matrix
     dist = dp[n][m]
+    print dist
     if dist > edit:
         return False
     else:
         return True
 
-def Substring(mention, menu_item):
+def SubstringMatch(mention, menu_item):
     '''
         Checks if either of strings part of the other
     '''
