@@ -53,4 +53,4 @@ if __name__ == '__main__':
         dish_mention = CompareItems(rest_mentions, items)
         rest_search[rest_id] = (rest_rating, dish_mention)
 
-    print rest_search
+    dish_search = Convert(rest_search)
