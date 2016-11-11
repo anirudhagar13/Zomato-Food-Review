@@ -62,8 +62,8 @@ if __name__ == '__main__':
     named_entity = {}
 
     # Reading data back
-    with open('Reviews.json', 'r') as f:
-         unprocess_data = json.load(f)
+    with open('data/Reviews.pkl', 'r') as f:
+         unprocess_data = pickle.load(f)
 
     for place, reviews in unprocess_data.items():
         for review, rating in reviews:
@@ -74,17 +74,18 @@ if __name__ == '__main__':
 
             # parsed has all menu items mentioned in one single review
             for item in parsed:
-                if item in process_data.keys():
-                    stats = process_data[item]
-                    popular = stats[0]
-                    senti = stats[1]
+                if len(item) >= 4:
+                    if item in process_data.keys():
+                        stats = process_data[item]
+                        popular = stats[0]
+                        senti = stats[1]
 
-                    # Update new values of item aggr. senti and popularity
-                    popular += 1
-                    senti += rating
-                    process_data[item] = [popular, senti]
-                else:
-                    process_data[item] = [1, rating]
+                        # Update new values of item aggr. senti and popularity
+                        popular += 1
+                        senti += rating
+                        process_data[item] = [popular, senti]
+                    else:
+                        process_data[item] = [1, rating]
 
         # Putting menu generated via reviews against place
         place = place.encode('utf-8')
