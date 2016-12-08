@@ -237,8 +237,8 @@ obj =
         title: 'Price vs. Rating',
         width: 900,
       	height: 670,
-        hAxis: {title: 'Price', minValue: 0, maxValue: 15},
-        vAxis: {title: 'Rating', minValue: 0, maxValue: 15},
+        hAxis: {title: 'Price'},
+        vAxis: {title: 'Rating'},
         legend: 'none'
       };
       var chart = new google.visualization.ScatterChart(document.getElementById('scatter2'));
