@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOODIE's SPOT</title>
+	<script type="text/javascript" src="loader.js"></script>
+    <script src="jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="visualize.js">
+    </script>
+	<link rel="stylesheet" href="w3.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+	<style>
+		body{
+			font-family: 'Lobster';
+			background-size:cover;
+			background-image: url("backgroundImage.jpg");
+		}
+		.stylishFont{
+			font-family: 'Lobster';
+		}
+		#visual
+      	{
+        display: none;
+      	}
+      	.mySlides
+      	{
+        display: none;
+      	}
+		#heading
+		{
+			margin-top: 0;
+			font-size: 80px;
+			font-style: italic;
+			font-family: Georgia;
+			text-align: center;
+		}
+		#toggle{
+			width: 200px;
+			height: 40px;
+			left: 100px;
+			position: absolute;
+			font-size: 20px;
+		}
+		#centralSearch{
+			width: 600px;
+			height: 40px;
+			left: 400px;
+			position: absolute;
+			font-size: 20px;
+		}
+		#search{
+			padding:0px;
+			margin: auto;
+			text-align: center;
+			width: 120px;
+			height: 40px;
+			left: 1100px;
+			position: absolute;
+			font-size: 30px;
+		}
+		.rating {
+			color: orange;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.rating::before {
+			content: "★★★★★";
+		}
+		#result{
+			text-align:center;
+			top: 250px;
+			left: 100px;
+			position:absolute;
+			background-color: #ADD8E6;
+			width: 1120px;
+		}
+		img#loader{
+			position:absolute;
+			display:none;
+			top:250px;
+			left:590px;
+		}
+		.toHover:hover{
+			color: orange;
+			font-size: 35px;
+		}
+		.toHover{
+			cursor:pointer;
+		}
+		select#sortBy{
+			position:absolute;
+			top:210px;
+			left:100px;
+			display:none;
+		}
+		#visualise{
+			padding: 0px;
+			position:absolute;
+			margin: auto;
+			top: 75px;
+			left: 1160px;
+			text-align: center;
+			height: 40px;
+			font-size: 30px;
+		}
+
+	</style>
+	<script>
+		function init(){
+			container= document.getElementById("container");
+			centralSearch= document.getElementById("centralSearch");
+			toggle=document.getElementById("toggle");
+			toggle.addEventListener("input",searchByChanged,false);
+			result=document.getElementById("result");
+			loader=document.getElementById("loader");
+			sortBy=document.getElementById("sortBy");
+			xhr= new XMLHttpRequest();
+			xhr.onreadystatechange=updateDishList;
+			xhr.open("GET","fetchMenu.php?value=dish",true);
+			xhr.send();
+			xhr2= new XMLHttpRequest();
+			xhr2.onreadystatechange=updateRestList;
+			xhr2.open("GET","fetchMenu.php?value=res",true);
+			xhr2.send();
+		}
+		function updateDishList(){
+			if(this.readyState==4 && this.status==200){
+				jsonDishes= JSON.parse(this.responseText);
+				options="";
+				for(key in jsonDishes){
+					options+='<option value='+'"'+key+'"'+'>';
+				}
+				document.getElementById("dishSearch").innerHTML=options;
+			}
+		}
+		function updateRestList(){
+			if(this.readyState==4 && this.status==200){
+				jsonRes= JSON.parse(this.responseText);
+				options1="";
+				for(key1 in jsonRes){
+					options1+='<option value='+'"'+key1+'"'+'>';
+
+				}
+				document.getElementById("resSearch").innerHTML=options1;
+			}
+
+		}
+
+		function imageLoad(){
+			var url='backgroundImage.jpg';
+			document.body.style.backgroundImage= "url("+url+")";
+		}
+		function searchByChanged(){
+			if(toggle.value=="Food Item"){
+				sortBy.style.display="none";
+				sortBy.innerHTML="";
+				centralSearch.value="";
+				document.getElementsByTagName("input")[1].setAttribute("list", "dishSearch");
+				document.getElementsByTagName("input")[1].setAttribute("placeholder", "Search Dishes");
+			}
+			if(toggle.value=="Restaurant"){
+				sortBy.style.display="none";
+				sortBy.innerHTML="";
+				centralSearch.value="";
+				document.getElementsByTagName("input")[1].setAttribute("list", "resSearch");
+				document.getElementsByTagName("input")[1].setAttribute("placeholder", "Search Restaurants");
+			}
+		}
+		function pI(a){
+			return parseInt(a);
+		}
+		function pF(a){
+			return parseFloat(a);
+		}
+		function searchFunc(){
+			div = document.getElementById('visual');
+			div.style.display = "none";
+			loader.style.display="block";
+			csVal=centralSearch.value;
+			if(toggle.value=="Food Item"){
+
+				jsonDish=jsonDishes[csVal];
+				if(jsonDish.length>1){
+					if(sortBy.innerHTML==""){
+					sortBy.innerHTML="<option value='dishR' selected>Sort by Dish Rating</option><option value='restR'>Sort by Restaurant Rating</option><option value='pop'>Sort by Popularity</option><option value='priceLH'>Sort by price(low to high)</option><option value='priceHL'>Sort by price(high to low)</option>";
+					}
+					sortBy.style.display="block";
+					var sortByVal=sortBy.value;
+					if(sortByVal=='dishR')
+						jsonDish.sort(function(a,b){return (pF(b[3])/pF(b[4]))-(pF(a[3])/pF(a[4]))});
+					else if(sortByVal=='restR')
+						jsonDish.sort(function(a,b){return pF(b[1])-pF(a[1])});
+					else if(sortByVal=='pop')
+						jsonDish.sort(function(a,b){return pI(b[4])-pI(a[4])});
+					else if(sortByVal=='priceLH')
+						jsonDish.sort(function(a,b){return pI(a[2])-pI(b[2])});
+					else if(sortByVal=='priceHL')
+						jsonDish.sort(function(a,b){return pI(b[2])-pI(a[2])});
+				}
+				updateDishDiv();
+			}
+			if(toggle.value=="Restaurant"){
+				sortBy.style.display="block";
+				if(sortBy.innerHTML=="")
+					sortBy.innerHTML="<option value='dishR' selected>Sort by Dish Rating</option><option value='pop'>Sort by Popularity</option><option value='priceLH'>Sort by price(low to high)</option><option value='priceHL'>Sort by price(high to low)</option>";
+				sortByVal=sortBy.value;
+				jsonRestA=jsonRes[csVal];
+				jsonRest=[];
+				for(var key2 in jsonRestA)
+					jsonRest.push([key2,jsonRestA[key2]]);
+				if(sortByVal=='dishR')
+					jsonRest.sort(function(a,b){return (pF(b[1][1])/pF(b[1][2]))-(pF(a[1][1])/pF(a[1][2]))});
+				else if(sortByVal=='pop')
+					jsonRest.sort(function(a,b){return pI(b[1][2])-pI(a[1][2])});
+				else if(sortByVal=='priceLH')
+					jsonRest.sort(function(a,b){return pF(a[1][0])-pF(b[1][0])});
+
+				else if(sortByVal=='priceHL')
+					jsonRest.sort(function(a,b){return pF(b[1][0])-pF(a[1][0])});
+			//	len=Object.keys(jsonRest).length;
+				updateRestDiv();
+			}
+		}
+		function updateRestDiv(){
+			result.innerHTML="";
+			result.style.display="none";
+			var time=500;
+			for(dish in jsonRest){
+				var dishArray=jsonRest[dish];
+				var div=document.createElement("div");
+				div.className="w3-panel w3-light-grey stylishFont";
+				//div.style="'Lobster'";
+				var one=document.createElement("h3");
+				one.className="w3-text-shadow stylishFont";
+				var oneSpan1=document.createElement("span");
+				oneSpan1.innerHTML="Dish Name: ";
+				var oneSpan2=document.createElement("span");
+				oneSpan2.innerHTML=dishArray[0];
+				one.appendChild(oneSpan1);
+				one.appendChild(oneSpan2);
+				div.appendChild(one);
+
+				var three=document.createElement("h3");
+				three.className="w3-text-shadow stylishFont";
+				var threeSpan1=document.createElement("span");
+				threeSpan1.innerHTML="Dish price: Rs.";
+				var threeSpan2=document.createElement("span");
+				threeSpan2.innerHTML=dishArray[1][0];
+				three.appendChild(threeSpan1);
+				three.appendChild(threeSpan2);
+				div.appendChild(three);
+
+				var stars2=parseFloat(dishArray[1][1])/parseFloat(dishArray[1][2]);
+				var four=document.createElement("h3");
+				four.className="w3-text-shadow stylishFont";
+				var fourSpan1=document.createElement("span");
+				fourSpan1.innerHTML="Dish Rating: ";
+				var fourSpan2=document.createElement("span");
+				fourSpan2.className="rating";
+				four.appendChild(fourSpan1);
+				four.appendChild(fourSpan2);
+				div.appendChild(four);
+				setTimeout(resRatingStars,time,fourSpan2,stars2);
+
+				var five=document.createElement("h3");
+				five.className="w3-text-shadow stylishFont";
+				var fiveSpan1=document.createElement("span");
+				fiveSpan1.innerHTML="Dish popularity: ";
+				var fiveSpan2=document.createElement("span");
+				var fs2inner="";
+				var popularity=parseInt(dishArray[1][2]);
+				var adjustedPop=popularity
+				if(popularity>10){
+					adjustedPop=6;
+				}
+				var personCount=0;
+				while(personCount<adjustedPop){
+					fs2inner+="<i class='material-icons'>person</i>";
+					personCount+=1;
+				}
+				if(adjustedPop!=popularity){
+					fs2inner+="...Very Popular";
+				}
+				fs2inner+=("["+popularity+"]");
+				fiveSpan2.innerHTML=fs2inner;
+				five.appendChild(fiveSpan1);
+				five.appendChild(fiveSpan2);
+				div.appendChild(five);
+
+				result.appendChild(div);
+			}
+		}
+		function resRatingStars(domEle,stars){
+			loader.style.display="none";
+			result.style.display="block";
+			var cw=domEle.clientWidth;
+			domEle.style.width= Math.round(cw * (stars / 5)) + 'px';
+		}
+
+		function ShowVisual()
+		{
+			div1 = document.getElementById('result');
+			div2 = document.getElementById('visual');
+			div1.style.display = "none";
+			div2.style.display = "block";
+			showDivs(1);
+		}
+
+		function resClick(event){
+			div = document.getElementById('visual');
+			div.style.display = "none";
+			centralSearch.value=event.target.innerHTML;
+			toggle.value="Restaurant";
+			searchFunc();
+		}
+		function updateDishDiv(){
+			result.innerHTML="";
+			result.style.display="none";
+			var time=500;
+			for(dish in jsonDish){
+				var div=document.createElement("div");
+				div.className="w3-panel w3-light-grey";
+				//div.style.fontFamily="'Lobster'";
+				var one=document.createElement("h2");
+				one.className="w3-text-shadow stylishFont";
+				var oneSpan1=document.createElement("span");
+				oneSpan1.innerHTML="Restaurant Name: ";
+				var oneSpan2=document.createElement("span");
+				oneSpan2.innerHTML=jsonDish[dish][0];
+				oneSpan2.className="toHover";
+				oneSpan2.addEventListener("click",resClick,false);
+				one.appendChild(oneSpan1);
+				one.appendChild(oneSpan2);
+				div.appendChild(one);
+
+				var two=document.createElement("h2");
+				two.className="w3-text-shadow stylishFont";
+				var twoSpan1=document.createElement("span");
+				twoSpan1.innerHTML="Restaurant Rating: ";
+				var twoSpan2=document.createElement("span");
+				twoSpan2.className="rating";
+				two.appendChild(twoSpan1);
+				two.appendChild(twoSpan2);
+				div.appendChild(two);
+				var stars=parseFloat(jsonDish[dish][1]);
+				setTimeout(resRatingStars,time,twoSpan2,stars);
+				var three=document.createElement("h2");
+				three.className="w3-text-shadow stylishFont";
+				var threeSpan1=document.createElement("span");
+				threeSpan1.innerHTML="Dish price: Rs.";
+				var threeSpan2=document.createElement("span");
+				threeSpan2.innerHTML=jsonDish[dish][2];
+				three.appendChild(threeSpan1);
+				three.appendChild(threeSpan2);
+				div.appendChild(three);
+
+				var stars2=parseFloat(jsonDish[dish][3])/parseFloat(jsonDish[dish][4]);
+				var four=document.createElement("h2");
+				four.className="w3-text-shadow stylishFont";
+				var fourSpan1=document.createElement("span");
+				fourSpan1.innerHTML="Dish Rating: ";
+				var fourSpan2=document.createElement("span");
+				fourSpan2.className="rating";
+				four.appendChild(fourSpan1);
+				four.appendChild(fourSpan2);
+				div.appendChild(four);
+				setTimeout(resRatingStars,time,fourSpan2,stars2);
+
+				var five=document.createElement("h2");
+				five.className="w3-text-shadow stylishFont";
+				var fiveSpan1=document.createElement("span");
+				fiveSpan1.innerHTML="Dish popularity: ";
+				var fiveSpan2=document.createElement("span");
+				var fs2inner="";
+				var personCount=0;
+				var popularity=parseInt(jsonDish[dish][4]);
+				var adjustedPop=popularity
+				if(popularity>10){
+					adjustedPop=6;
+				}
+				while(personCount<adjustedPop){
+					fs2inner+="<i class='material-icons'>person</i>";
+					personCount+=1;
+				}
+				if(adjustedPop!=popularity){
+					fs2inner+="...Very Popular";
+				}
+				fs2inner+=("["+popularity+"]");
+				fiveSpan2.innerHTML=fs2inner;
+				five.appendChild(fiveSpan1);
+				five.appendChild(fiveSpan2);
+				div.appendChild(five);
+				result.appendChild(div);
+			}
+
+		}
+
+	</script>
+</head>
+<body onload="init()">
+	<h1 id="heading">FOODIE's SPOT</h1>
+	<div id="container">
+		<input id="toggle" class="w3-input w3-border w3-round w3-hover-green" list="binary" placeholder="Search By">
+		<datalist id="binary">
+			<option value="Food Item">
+			<option value="Restaurant">
+		</datalist>
+		<input placeholder="Search ...." class="w3-input w3-border w3-round w3-hover-green" id="centralSearch" list="noneSelected">
+		<datalist id="noneSelected">
+		</datalist>
+		<datalist id="dishSearch">
+		</datalist>
+		<datalist id="resSearch">
+		</datalist>
+		<input class="w3-btn w3-grey w3-hover-blue w3-round w3-border-blue" type="button" id="search" value="Search" onclick="searchFunc()"></input>
+		<select id="sortBy" onchange="searchFunc()"></select>
+		<div class="w3-content w3-display-container" id="visual" style="width: 950px; height: 700px; top: 80px;">
+	      <div class="mySlides" id="bubble" ><h2>Please Wait...</h2></div>
+	      <div class="mySlides" id="scatter1" ></div>
+	      <div class="mySlides" id="bar1" ></div>
+	      <div class="mySlides" id="bar2" ></div>
+	      <div class="mySlides" id="bar3" ></div>
+	      <div class="mySlides" id="scatter2" ></div>
+	      <div class="mySlides" id="scatter3" ></div>
+	      <div class="mySlides" id="donut" ></div>
+	      <div class="mySlides" id="bar4" ></div>
+	      <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+	      <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+	    </div>
+		<div id="result"></div>
+		<img src="loader.gif" id="loader"/>
+		<input id="visualise" type="button" class="w3-btn w3-grey w3-hover-blue w3-round w3-border-blue" value="Visualisations" onclick="ShowVisual()"></input>
+	</div>
+</body>
+</html>
