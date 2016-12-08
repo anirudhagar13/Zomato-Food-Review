@@ -22,7 +22,7 @@ def CompareItems(mentions, menus):
         popularity = stuff[0]
         dish_rating = stuff[1]
         for menu_item in menus:
-            price = menu_item[1]
+            price = str(menu_item[1])
             food = menu_item[0]
             if(HierarchyMatch(mention, food)):
             	if(dic.has_key(food)):
