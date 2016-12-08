@@ -220,6 +220,111 @@ obj =
     chart.draw(data, options);
 
   },
+  scatter_rating : function(file_data)
+  {
+    if(file_data)
+    {
+      //arraydata is a list of lists
+      var arraydata = new Array();
+      arraydata.push(['Price','Rating']);
+      for(i in file_data)
+      {
+        arraydata.push([i,file_data[i]]);
+      }
+      //console.log(arraydata);
+      var data = google.visualization.arrayToDataTable(arraydata);
+      var options = {
+        title: 'Price vs. Rating',
+        width: 900,
+      	height: 670,
+        hAxis: {title: 'Price', minValue: 0, maxValue: 15},
+        vAxis: {title: 'Rating', minValue: 0, maxValue: 15},
+        legend: 'none'
+      };
+      var chart = new google.visualization.ScatterChart(document.getElementById('scatter2'));
+      chart.draw(data, options);
+    }
+  },
+  scatter_popl : function(file_data)
+  {
+    if(file_data)
+    {
+      //arraydata is a list of lists
+      var arraydata = new Array();
+      arraydata.push(['Price','Popularity']);
+      for(i in file_data)
+      {
+        arraydata.push([i,file_data[i]]);
+      }
+      //console.log(arraydata);
+      var data = google.visualization.arrayToDataTable(arraydata);
+      var options = {
+        title: 'Price vs. Popularity',
+        width: 900,
+      	height: 670,
+        hAxis: {title: 'Price'},
+        vAxis: {title: 'Popularity'},
+        legend: 'none'
+      };
+      var chart = new google.visualization.ScatterChart(document.getElementById('scatter3'));
+      chart.draw(data, options);
+    }
+  },
+  donut: function(file_data)
+  {
+    if(file_data)
+    {
+      var arraydata = new Array();
+      arraydata.push(['Rating','Number of Reviews']);
+      for(i in file_data)
+      {
+        //console.log(i);
+        arraydata.push([i,file_data[i]]);
+      }
+      var data = google.visualization.arrayToDataTable(arraydata);
+      var options = {
+          title: 'Rating vs Number of Reviews',
+          width: 900,
+          height: 670,
+          pieHole: 0.4,
+        };
+      var chart = new google.visualization.PieChart(document.getElementById('donut'));
+      chart.draw(data, options);
+    }
+  },
+  bar_avgrating : function(file_data)
+  {
+    //rating vs avg review length
+    if(file_data)
+    {
+      var arraydata = new Array();
+      arraydata.push(['Rating', 'Average Length']);
+      var sorted = [];
+      for(var key in file_data) {
+          sorted[sorted.length] = key;
+      }
+      sorted.sort();
+      //console.log(sorted);
+      for(var i=0; i<sorted.length; i++)
+      {
+          var key = sorted[i];
+          //console.log(typeof(parseInt(sorted[i],10)));
+          arraydata.push([key,file_data[key]]);
+      }
+      var data = google.visualization.arrayToDataTable(arraydata);
+      var options = {
+        title: "Rating vs Average Length of corresponding Review",
+        hAxis: {title: 'Average Review Length'},
+        yAxis: {title: 'Rating'},
+        width: 900,
+        height: 670,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('bar4'));
+      chart.draw(data, options);
+    }
+  },
 
   Openfile : function(name,callback)
   {
@@ -233,5 +338,9 @@ obj =
   {
     //Opening and Updating data
     this.Openfile('restaurant_avg.json',this.Bubble);
+    this.Openfile('data/price_vs_rating.json',this.scatter_rating);
+    this.Openfile('data/price_vs_popl.json',this.scatter_popl);
+    this.Openfile('data/rating_vs_numrev.json',this.donut);
+    this.Openfile('data/rating_vs_avgrevlen.json', this.bar_avgrating);
   }
 }
