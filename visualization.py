@@ -24,7 +24,7 @@ def bubble(reviews, rest_search, rest_name):
         for review in all_reviews:
             tot_length += len(review[0].split())
 
-        visual[str(name)] = (str(rating), tot_price/no_reviews,
+        visual[str(name)] = (rating, tot_price/no_reviews,
                              tot_length/no_reviews)
 
     return visual
