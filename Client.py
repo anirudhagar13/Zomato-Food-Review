@@ -1,5 +1,4 @@
 from Match import *
-import pickle
 import json
 
 def HierarchyMatch(mention, menu_item):
@@ -57,11 +56,11 @@ def Convert(rest_search):
 
 if __name__ == '__main__':
 
-    file = open("data/restid_menu.pickle",'r')
-    menu = pickle.load(file)
+    file = open("data/restid_menu.json",'r')
+    menu = json.load(file)
 
-    file = open("data/tagged_mentions.pickle",'r')
-    tagged_mentions = pickle.load(file)
+    file = open("data/tagged_mentions.json",'r')
+    tagged_mentions = json.load(file)
 
     rest_search = {}
     dish_mention = {}

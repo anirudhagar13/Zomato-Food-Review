@@ -2,7 +2,7 @@ import json
 import nltk
 from nltk.corpus import stopwords
 import sys
-import pickle
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -62,8 +62,8 @@ if __name__ == '__main__':
     named_entity = {}
 
     # Reading data back
-    with open('data/Reviews.pkl', 'r') as f:
-         unprocess_data = pickle.load(f)
+    with open('data/Reviews.json', 'r') as f:
+         unprocess_data = json.load(f)
 
     for place, reviews in unprocess_data.items():
         for review, rating in reviews:
@@ -93,5 +93,5 @@ if __name__ == '__main__':
         process_data = {} # Done to process other place reviews
 
     # Writing JSON data
-    with open('data/tagged_mentions.pickle', 'w') as f:
-         pickle.dump(named_entity, f)
+    with open('data/tagged_mentions.json', 'w') as f:
+         json.dump(named_entity, f)

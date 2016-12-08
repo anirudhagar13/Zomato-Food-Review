@@ -1,4 +1,4 @@
-import pickle, json
+import json, json
 
 def bubble(reviews, rest_search, rest_name):
     '''
@@ -16,19 +16,18 @@ def bubble(reviews, rest_search, rest_name):
         #Set params to zero in each loop
         tot_price = 0
         tot_rate = 0
+        tot_length = 0
 
-        print name
         #Getting Avg price and popularity
         for info in details.values():
-            print info
-            #tot_price += int(str(info[0]))
-            #tot_rate += info[1]
+            tot_price += int(str(info[0]))
+            tot_rate += info[1]
 
         #Calculating total words in all reviews
         for review in all_reviews:
-            tot_length += len(review[1].split())
+            tot_length += len(review[0].split())
 
-        #print name, rating, tot_price, tot_rate/no_reviews
+        print name, rating, tot_price/no_reviews, tot_length/no_reviews
 
 
 
@@ -36,14 +35,14 @@ def bubble(reviews, rest_search, rest_name):
 
 if __name__ == '__main__':
 
-    file = open("data/Reviews.pkl",'r')
-    reviews = pickle.load(file)
+    file = open("data/Reviews.json",'r')
+    reviews = json.load(file)
 
     file = open("data/rest_search.json",'r')
     rest_search = json.load(file)
 
-    file = open("data/restname_id.pickle",'r')
-    rest_name = pickle.load(file)
+    file = open("data/restname_id.json",'r')
+    rest_name = json.load(file)
 
     bubble(reviews, rest_search, rest_name)
 
