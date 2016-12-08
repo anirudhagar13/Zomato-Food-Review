@@ -24,7 +24,7 @@ def rating_vs_numrev(option):
         graph_data[key] = (float(graph_data[key])/total_num_of_reviews)*100
     if option == 1:
         print graph_data
-        with open('data/rating_vs_numrev.json', 'w') as outfile:
+        with open('visualizations/data/rating_vs_numrev.json', 'w') as outfile:
             json.dump(graph_data, outfile)
     elif option == 2:
         return graph_data
@@ -47,10 +47,10 @@ def rating_vs_avgrevlen():
         #print str(key) + " : " + str(graph_data[key]) + " : " + str(numrev[key])
         graph_data[key] = graph_data[key] / numrev[key]
 
-    with open('data/rating_vs_avgrevlen.json', 'w') as outfile:
+    with open('visualizations/data/rating_vs_avgrevlen.json', 'w') as outfile:
         json.dump(graph_data, outfile)
 
-def price_vs_popl():
+def price_vs_popl(option):
     '''
         graph_data[price] = total popl
         - plots price vs num of reviews(popl) for that price
@@ -62,9 +62,11 @@ def price_vs_popl():
             graph_data[key] = values[0][4]
         else:
             graph_data[key] += values[0][4]
-
-    with open('data/price_vs_popl.json', 'w') as outfile:
-        json.dump(graph_data,outfile)
+    if option == 1:
+        with open('visualizations/data/price_vs_popl.json', 'w') as outfile:
+            json.dump(graph_data,outfile)
+    if option == 2:
+        return graph_data
 
 def price_vs_rating():
     '''
@@ -78,13 +80,15 @@ def price_vs_rating():
             graph_data[key] = round(values[0][3]/values[0][4],2)
         else:
             graph_data[key] += round(values[0][3]/values[0][4],2)
-
-    with open('data/price_vs_rating.json', 'w') as outfile:
+    price_reviews = price_vs_popl(2)
+    for key in graph_data.keys():
+        graph_data[key] = float(graph_data[key]) / price_reviews[key]
+    with open('visualizations/data/price_vs_rating.json', 'w') as outfile:
         json.dump(graph_data,outfile)
 
 if __name__ == "__main__":
 
     #rating_vs_numrev(1)
-    rating_vs_avgrevlen()
-    #price_vs_popl()
-    #price_vs_rating()
+    #rating_vs_avgrevlen()
+    #price_vs_popl(1)
+    price_vs_rating()
