@@ -23,7 +23,7 @@ if __name__ == "__main__":
                     f2 = open((dirname2+filename),'r')
                     lines = f2.readlines()
                     lines2 = f1.read()
-                    lines2 = lines2.split('-')
+                    lines2 = lines2.split('-   ')
                     lines2.pop(0)
                     s1 = len(lines) #no of ratings
                     s2 = len(lines2) # no of reviews
