@@ -1,4 +1,5 @@
 import pickle
+import json
 
 big_tup = ()
 small_tup = ()
@@ -28,10 +29,9 @@ with open('menu.csv') as fp:
     dic[rest_id] = (rate,lst)
     dic2[rest_id] = rest
 
-print dic2
-#print dic
-with open('data/restname_id.pickle', 'wb') as handle:
-  pickle.dump(dic2, handle)
+
+with open('data/restname_id.json', 'wb') as handle:
+  json.dump(dic2, handle)
 with open('data/restid_menu.pickle', 'wb') as handle:
   pickle.dump(dic, handle)
 

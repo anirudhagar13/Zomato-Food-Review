@@ -32,16 +32,17 @@ def CompareItems(mentions, menus):
                 	dic[food] = val
                 else:
                 	dic[food] = [price,dish_rating,popularity]
-    return dic 
+    return dic
 
 
 def Convert(rest_search):
     dic = {}
     for rest,info in rest_search.items():
+        rest_rating = info[0]
     	for dish, dish_info in info[1].items():
     		price = dish_info[0]
     		dish_rating = dish_info[1]
-    		popularity = dish_info[0]
+    		popularity = dish_info[2]
     		if dic.has_key(dish):
     			val = dic[dish]
     			tup = (rest,rest_rating,price,dish_rating,popularity)
@@ -58,22 +59,22 @@ if __name__ == '__main__':
 
     file = open("data/restid_menu.pickle",'r')
     menu = pickle.load(file)
-  
+
     file = open("data/tagged_mentions.pickle",'r')
     tagged_mentions = pickle.load(file)
-    
+
     rest_search = {}
     dish_mention = {}
     for rest_id, menu_items in menu.items():
         rest_mentions = tagged_mentions[rest_id]
         rest_rating = menu_items[0]
         items = menu_items[1]
-        
+
         dish_mention = CompareItems(rest_mentions, items)
         rest_search[rest_id] = (rest_rating, dish_mention)
 
     dish_search = Convert(rest_search)
-    
+
     with open('data/rest_search.json', 'wb') as f:
     	json.dump(rest_search,f)
 

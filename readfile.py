@@ -5,10 +5,9 @@ if __name__ == "__main__":
     dirname2 = "Ratings/"
     with open('data/restname_id.pickle', 'rb') as f:
         mapping = pickle.load(f)
-    #print mapping.values()
+
     rest_details = dict()
     for fname in os.listdir(dirname1):
-        #print fname[:-12]
         dictid = 0
         for root, dirs, files in os.walk(dirname2):
             for filename in files:
@@ -19,7 +18,6 @@ if __name__ == "__main__":
                             flg = False
                             dictid = res_id
                     ls = list()
-                    #print type(dictid)
                     rest_details[dictid] = dict()
                     f1 = open((dirname1+fname),'r')
                     f2 = open((dirname2+filename),'r')
@@ -41,14 +39,6 @@ if __name__ == "__main__":
                         rating = lines[i].rstrip()
                         ls.append([review,float(rating)])
                     rest_details[dictid] = ls
-                    #rest_details[fname[:-12]] = ls
-                    '''
-                    for line,i in zip(f.read().split('-'),lines):
-                        rest_details[fname[:-12]].append([i[:-1],line.strip().split('\n')])
-                        #print i[:-1],line.strip().split('\n')
-                    '''
-                    #print "*******************
-    #print rest_details['52459']
+
     with open('data/Reviews.pkl', 'wb') as f:
         pickle.dump(rest_details,f)
-    
