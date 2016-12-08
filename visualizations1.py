@@ -64,8 +64,8 @@ def price_vs_popl():
         else:
             graph_data[key] += values[0][4]
 
-    print graph_data
-    return graph_data
+    with open('data/price_vs_popl.json', 'w') as outfile:
+        json.dump(graph_data,outfile)
 
 def price_vs_rating():
     '''
@@ -80,11 +80,12 @@ def price_vs_rating():
         else:
             graph_data[key] += round(values[0][3]/values[0][4],2)
 
-    print graph_data[140]
+    with open('data/price_vs_rating.json', 'w') as outfile:
+        json.dump(graph_data,outfile)
 
 if __name__ == "__main__":
 
-    rating_vs_numrev(1)
+    #rating_vs_numrev(1)
     #rating_vs_avgrevlen()
-    #price_vs_popl()
+    price_vs_popl()
     #price_vs_rating()
