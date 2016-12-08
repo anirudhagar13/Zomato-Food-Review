@@ -1,6 +1,25 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(init);
 
+//******For Carousel*******
+var slideIndex = 1;
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+//*************************
+
 function init()
 {
   obj.Draw();
@@ -34,16 +53,18 @@ obj =
 
     var options = {
     title: 'Correlation between Average Price, Rating & Review length',
-    width: 1000,
-    height: 1000,
+    width: 900,
+    height: 670,
     hAxis: {title: 'Review Length'},
     vAxis: {title: 'Average Dish Price'},
     bubble: {textStyle: {fontSize: 8}}
     };
 
     var chart = new google.visualization.BubbleChart(document.getElementById(
-    'series_chart_div'));
+    'bubble'));
     chart.draw(data, options);
+
+    obj.Bar_Common(file_data);
   },
 
   Getrandomcolor : function()
@@ -116,20 +137,54 @@ obj =
   Bar_Common : function(file_data)
   {
 
-    details = obj.Bar_price(file_data);
+    details1 = obj.Bar_price(file_data);
+    details2 = obj.Bar_revlength(file_data);
+    details3 = obj.Bar_rating(file_data);
 
-    var data = google.visualization.arrayToDataTable(details);
-    var options = {
-        title: "Comparison Between Restaurants",
-        width: 1000,
-        height: 1000,
-        hAxis: {title: 'Average Value'},
+    var data1 = google.visualization.arrayToDataTable(details1);
+    var data2 = google.visualization.arrayToDataTable(details2);
+    var data3 = google.visualization.arrayToDataTable(details3);
+
+    var options1 = {
+        title: "Comparison Between Restaurants, Price Wise",
+        width: 900,
+        height: 670,
+        hAxis: {title: 'Average Price'},
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
+
+    var options2 = {
+        title: "Comparison Between Restaurants, Review Length Wise",
+        width: 900,
+        height: 670,
+        hAxis: {title: 'Average Review Length'},
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+
+    var options3 = {
+        title: "Comparison Between Restaurants, Rating Wise",
+        width: 900,
+        height: 670,
+        hAxis: {title: 'Average Rating'},
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+
       var chart = new google.visualization.BarChart(document.getElementById(
-        'series_chart_div'));
-      chart.draw(data, options);
+        'bar1'));
+      chart.draw(data1, options1);
+
+      chart = new google.visualization.BarChart(document.getElementById(
+        'bar2'));
+      chart.draw(data2, options2);
+
+      chart = new google.visualization.BarChart(document.getElementById(
+        'bar3'));
+      chart.draw(data3, options3);
+
+    obj.Scatter(file_data);
   },
 
   Scatter : function(file_data)
@@ -154,12 +209,14 @@ obj =
     var options = {
       title: 'Price VS Review Length',
       hAxis: {title: 'Average Price'},
+      width: 900,
+      height: 670,
       vAxis: {title: 'Average Review Length'},
       legend: 'none'
     };
 
     var chart = new google.visualization.ScatterChart(document.getElementById(
-      'series_chart_div'));
+      'scatter1'));
     chart.draw(data, options);
 
   },
@@ -175,6 +232,6 @@ obj =
   Draw : function()
   {
     //Opening and Updating data
-    //this.Openfile('restaurant_avg.json',this.Bubble);
+    this.Openfile('restaurant_avg.json',this.Bubble);
   }
 }
