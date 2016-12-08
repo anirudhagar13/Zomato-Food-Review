@@ -1,10 +1,10 @@
-import os,pickle
+import os,pickle, json
 
 if __name__ == "__main__":
     dirname1 = "Reviews/"
     dirname2 = "Ratings/"
-    with open('data/restname_id.pickle', 'rb') as f:
-        mapping = pickle.load(f)
+    with open('data/restname_id.json', 'rb') as f:
+        mapping = json.load(f)
 
     rest_details = dict()
     for fname in os.listdir(dirname1):
@@ -23,7 +23,7 @@ if __name__ == "__main__":
                     f2 = open((dirname2+filename),'r')
                     lines = f2.readlines()
                     lines2 = f1.read()
-                    lines2 = lines2.split('-   ')
+                    lines2 = lines2.split('- ')
                     lines2.pop(0)
                     s1 = len(lines) #no of ratings
                     s2 = len(lines2) # no of reviews
@@ -40,5 +40,5 @@ if __name__ == "__main__":
                         ls.append([review,float(rating)])
                     rest_details[dictid] = ls
 
-    with open('data/Reviews.pkl', 'wb') as f:
-        pickle.dump(rest_details,f)
+    with open('data/Reviews.json', 'wb') as f:
+    	json.dump(rest_details,f)
