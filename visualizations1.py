@@ -7,7 +7,10 @@ with open('data/dish_search.json') as data_file:
     data2 = json.load(data_file)
 
 def rating_vs_numrev(option):
-
+    '''
+        graph_data[rating] = num of reviews
+        - plots rating vs corresponding num of reviews
+    '''
     graph_data = dict()
     graph_data[1.0], graph_data[1.5], graph_data[2.0], graph_data[2.5], graph_data[3.0], graph_data[3.5],graph_data[4.0], graph_data[4.5], graph_data[5.0] = 0,0,0,0,0,0,0,0,0
     #review[0] - text review of a menu item
@@ -18,13 +21,19 @@ def rating_vs_numrev(option):
 
     total_num_of_reviews = sum(graph_data.values())
     if option == 1:
-        with open('rating_vs_numrev.json') as outfile:
-            json.dump(graph_data, outfile)
+        json_dict = dict()
+        json_dict['price'] = graph_data.keys()
+        json_dict['numrev'] = graph_data.values()
+        with open('data/rating_vs_numrev.json', 'w') as outfile:
+            json.dump(json_dict, outfile)
     elif option == 2:
         return graph_data
 
 def rating_vs_avgrevlen():
-
+    '''
+        graph_data[rating] = length of all corresponding reviews
+        - plots rating vs average length of reviews for that rating
+    '''
     graph_data = dict()
     graph_data[1.0], graph_data[1.5], graph_data[2.0], graph_data[2.5], graph_data[3.0], graph_data[3.5],graph_data[4.0], graph_data[4.5], graph_data[5.0] = 0,0,0,0,0,0,0,0,0
 
@@ -45,7 +54,7 @@ def rating_vs_avgrevlen():
 def price_vs_popl():
     '''
         graph_data[price] = total popl
-        - number of reviews(popl) of menu items of a particular price.
+        - plots price vs num of reviews(popl) for that price
     '''
     graph_data = dict()
     for values in data2.values():
@@ -60,6 +69,8 @@ def price_vs_popl():
 
 def price_vs_rating():
     '''
+        graph_data[price] = rating
+        - plots price vs average rating given to menu items of that price
     '''
     graph_data = dict()
     for values in data2.values():
@@ -73,7 +84,7 @@ def price_vs_rating():
 
 if __name__ == "__main__":
 
-    #rating_vs_numrev(1)
+    rating_vs_numrev(1)
     #rating_vs_avgrevlen()
     #price_vs_popl()
-    price_vs_rating()
+    #price_vs_rating()
