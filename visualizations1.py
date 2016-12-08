@@ -9,7 +9,7 @@ with open('data/dish_search.json') as data_file:
 def rating_vs_numrev(option):
     '''
         graph_data[rating] = num of reviews
-        - plots rating vs corresponding num of reviews
+        - plots rating vs corresponding num of reviews(donut)
     '''
     graph_data = dict()
     graph_data[1.0], graph_data[1.5], graph_data[2.0], graph_data[2.5], graph_data[3.0], graph_data[3.5],graph_data[4.0], graph_data[4.5], graph_data[5.0] = 0,0,0,0,0,0,0,0,0
@@ -20,12 +20,12 @@ def rating_vs_numrev(option):
             graph_data[review[1]] += 1
 
     total_num_of_reviews = sum(graph_data.values())
+    for key in graph_data.keys():
+        graph_data[key] = (float(graph_data[key])/total_num_of_reviews)*100
     if option == 1:
-        json_dict = dict()
-        json_dict['price'] = graph_data.keys()
-        json_dict['numrev'] = graph_data.values()
+        print graph_data
         with open('data/rating_vs_numrev.json', 'w') as outfile:
-            json.dump(json_dict, outfile)
+            json.dump(graph_data, outfile)
     elif option == 2:
         return graph_data
 
@@ -44,12 +44,11 @@ def rating_vs_avgrevlen():
     numrev = rating_vs_numrev(2)
 
     for key in graph_data.keys():
-        print str(key) + " : " + str(graph_data[key]) + " : " + str(numrev[key])
+        #print str(key) + " : " + str(graph_data[key]) + " : " + str(numrev[key])
         graph_data[key] = graph_data[key] / numrev[key]
-    '''
-    with open('rating_vs_avgrevlen.json') as outfile:
+
+    with open('data/rating_vs_avgrevlen.json', 'w') as outfile:
         json.dump(graph_data, outfile)
-    '''
 
 def price_vs_popl():
     '''
@@ -86,6 +85,6 @@ def price_vs_rating():
 if __name__ == "__main__":
 
     #rating_vs_numrev(1)
-    #rating_vs_avgrevlen()
-    price_vs_popl()
+    rating_vs_avgrevlen()
+    #price_vs_popl()
     #price_vs_rating()
