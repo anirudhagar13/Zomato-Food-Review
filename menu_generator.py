@@ -32,6 +32,6 @@ with open('menu.csv') as fp:
 
 with open('data/restname_id.json', 'wb') as handle:
   json.dump(dic2, handle)
-with open('data/restid_menu.pickle', 'wb') as handle:
-  pickle.dump(dic, handle)
+with open('data/restid_menu.json', 'wb') as handle:
+  json.dump(dic, handle)
 
