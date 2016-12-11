@@ -1,6 +1,6 @@
 Intent:
 ----------------------------------
-    - Two Searches not supported by Food based paltforms
+    - Two Searches not supported by Food based platforms
         > Best dishes of a restaurant as per customers
         > Best restaurants serving a particular dish
 
