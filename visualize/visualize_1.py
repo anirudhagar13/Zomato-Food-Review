@@ -38,16 +38,16 @@ def bubble(reviews, rest_search, rest_name):
 
 if __name__ == '__main__':
 
-    file = open("data/Reviews.json",'r')
+    file = open("../data/Reviews.json",'r')
     reviews = json.load(file)
 
-    file = open("data/rest_search.json",'r')
+    file = open("../data/rest_search.json",'r')
     rest_search = json.load(file)
 
-    file = open("data/restname_id.json",'r')
+    file = open("../data/restname_id.json",'r')
     rest_name = json.load(file)
 
     visual = bubble(reviews, rest_search, rest_name)
 
-    with open('visualizations/restaurant_avg.json', 'wb') as f:
+    with open('../data/visualizations/restaurant_avg.json', 'wb') as f:
         json.dump(visual,f)

@@ -1,10 +1,10 @@
 import os,json
 
 if __name__ == "__main__":
-    dirname1 = "Reviews/"
-    dirname2 = "Ratings/"
+    dirname1 = "../Reviews/"
+    dirname2 = "../Ratings/"
 
-    with open('data/restname_id.json', 'rb') as f:
+    with open('../data/restname_id.json', 'rb') as f:
         mapping = json.load(f)
 
     rest_details = dict()
@@ -41,5 +41,5 @@ if __name__ == "__main__":
                         ls.append([review,float(rating)])
                     rest_details[dictid] = ls
 
-    with open('data/Reviews.json', 'wb') as f:
+    with open('../data/Reviews.json', 'wb') as f:
         json.dump(rest_details,f)

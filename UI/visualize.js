@@ -337,10 +337,10 @@ obj =
   Draw : function()
   {
     //Opening and Updating data
-    this.Openfile('restaurant_avg.json',this.Bubble);
-    this.Openfile('data/price_vs_rating.json',this.scatter_rating);
-    this.Openfile('data/price_vs_popl.json',this.scatter_popl);
-    this.Openfile('data/rating_vs_numrev.json',this.donut);
-    this.Openfile('data/rating_vs_avgrevlen.json', this.bar_avgrating);
+    this.Openfile('../data/visualizations/restaurant_avg.json',this.Bubble);
+    this.Openfile('../data/visualizations/price_vs_rating.json',this.scatter_rating);
+    this.Openfile('../data/visualizations/price_vs_popl.json',this.scatter_popl);
+    this.Openfile('../data/visualizations/rating_vs_numrev.json',this.donut);
+    this.Openfile('../data/visualizations/rating_vs_avgrevlen.json', this.bar_avgrating);
   }
 }

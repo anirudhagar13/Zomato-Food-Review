@@ -6,7 +6,7 @@ lst = []
 rest = ''
 dic = {}
 dic2 = {}
-with open('menu.csv') as fp:
+with open('../data/menu.csv') as fp:
     for line in fp:
         line = line.rstrip()
         ls = line.split(',')
@@ -29,8 +29,8 @@ with open('menu.csv') as fp:
     dic2[rest_id] = rest
 
 
-with open('data/restname_id.json', 'wb') as handle:
+with open('../data/restname_id.json', 'wb') as handle:
   json.dump(dic2, handle)
-with open('data/restid_menu.json', 'wb') as handle:
+with open('../data/restid_menu.json', 'wb') as handle:
   json.dump(dic, handle)
 

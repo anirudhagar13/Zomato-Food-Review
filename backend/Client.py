@@ -56,10 +56,10 @@ def Convert(rest_search):
 
 if __name__ == '__main__':
 
-    file = open("data/restid_menu.json",'r')
+    file = open("../data/restid_menu.json",'r')
     menu = json.load(file)
 
-    file = open("data/tagged_mentions.json",'r')
+    file = open("../data/tagged_mentions.json",'r')
     tagged_mentions = json.load(file)
 
     rest_search = {}
@@ -74,8 +74,8 @@ if __name__ == '__main__':
 
     dish_search = Convert(rest_search)
 
-    with open('data/rest_search.json', 'wb') as f:
+    with open('../data/rest_search.json', 'wb') as f:
     	json.dump(rest_search,f)
 
-    with open('data/dish_search.json', 'wb') as f:
+    with open('../data/dish_search.json', 'wb') as f:
     	json.dump(dish_search,f)

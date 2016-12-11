@@ -1,9 +1,9 @@
 import pickle, json
 
-with open('data/Reviews.json') as data_file:
+with open('../data/Reviews.json') as data_file:
     data = json.load(data_file)
 
-with open('data/dish_search.json') as data_file:
+with open('../data/dish_search.json') as data_file:
     data2 = json.load(data_file)
 
 def rating_vs_numrev(option):
@@ -23,8 +23,7 @@ def rating_vs_numrev(option):
     for key in graph_data.keys():
         graph_data[key] = (float(graph_data[key])/total_num_of_reviews)*100
     if option == 1:
-        print graph_data
-        with open('visualizations/data/rating_vs_numrev.json', 'w') as outfile:
+        with open('../data/visualizations/rating_vs_numrev.json', 'w') as outfile:
             json.dump(graph_data, outfile)
     elif option == 2:
         return graph_data
@@ -44,10 +43,9 @@ def rating_vs_avgrevlen():
     numrev = rating_vs_numrev(2)
 
     for key in graph_data.keys():
-        #print str(key) + " : " + str(graph_data[key]) + " : " + str(numrev[key])
         graph_data[key] = graph_data[key] / numrev[key]
 
-    with open('visualizations/data/rating_vs_avgrevlen.json', 'w') as outfile:
+    with open('../data/visualizations/rating_vs_avgrevlen.json', 'w') as outfile:
         json.dump(graph_data, outfile)
 
 def price_vs_popl(option):
@@ -63,7 +61,7 @@ def price_vs_popl(option):
         else:
             graph_data[key] += values[0][4]
     if option == 1:
-        with open('visualizations/data/price_vs_popl.json', 'w') as outfile:
+        with open('../data/visualizations/price_vs_popl.json', 'w') as outfile:
             json.dump(graph_data,outfile)
     if option == 2:
         return graph_data
@@ -83,12 +81,12 @@ def price_vs_rating():
     price_reviews = price_vs_popl(2)
     for key in graph_data.keys():
         graph_data[key] = float(graph_data[key]) / price_reviews[key]
-    with open('visualizations/data/price_vs_rating.json', 'w') as outfile:
+    with open('../data/visualizations/price_vs_rating.json', 'w') as outfile:
         json.dump(graph_data,outfile)
 
 if __name__ == "__main__":
 
-    #rating_vs_numrev(1)
-    #rating_vs_avgrevlen()
-    #price_vs_popl(1)
+    rating_vs_numrev(1)
+    rating_vs_avgrevlen()
+    price_vs_popl(1)
     price_vs_rating()

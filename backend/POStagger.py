@@ -62,7 +62,7 @@ if __name__ == '__main__':
     named_entity = {}
 
     # Reading data back
-    with open('data/Reviews.json', 'r') as f:
+    with open('../data/Reviews.json', 'r') as f:
          unprocess_data = json.load(f)
 
     for place, reviews in unprocess_data.items():
@@ -93,5 +93,5 @@ if __name__ == '__main__':
         process_data = {} # Done to process other place reviews
 
     # Writing JSON data
-    with open('data/tagged_mentions.json', 'w') as f:
+    with open('../data/tagged_mentions.json', 'w') as f:
          json.dump(named_entity, f)

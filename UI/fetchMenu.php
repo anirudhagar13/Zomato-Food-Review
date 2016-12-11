@@ -1,8 +1,8 @@
 <?php
 	extract($_GET);
 	if($value=="res"){
-		$jsonRep=json_decode(file_get_contents("rest_search.json"));
-		$jsonRep2=json_decode(file_get_contents("restname_id.json"));
+		$jsonRep=json_decode(file_get_contents("../data/rest_search.json"));
+		$jsonRep2=json_decode(file_get_contents("../data/restname_id.json"));
 		$newJson=array();
 		foreach($jsonRep as $id=>$val){
 			foreach($jsonRep2 as $id2=>$name){
@@ -19,8 +19,8 @@
 		echo json_encode($newJson);
 	}
 	if($value=="dish"){
-		$jsonRep=json_decode(file_get_contents("dish_search.json"));
-		$jsonRep2=json_decode(file_get_contents("restname_id.json"));
+		$jsonRep=json_decode(file_get_contents("../data/dish_search.json"));
+		$jsonRep2=json_decode(file_get_contents("../data/restname_id.json"));
 		$newJson=array();
 		foreach($jsonRep as $dish=>$val){
 			$dishRest=array();
@@ -36,7 +36,7 @@
 						$dishRest[]=$newRest;
 						break;
 					}
-					
+
 				}
 			}
 			$newJson[ucwords($dish)]=$dishRest;
