@@ -1,3 +1,6 @@
+TAGGING MENU ITEMS FROM USER REVIEWS
+====================================
+
 Intent:
 ----------------------------------
     - Two Searches not supported by Food based platforms
@@ -22,9 +25,9 @@ Data:
     - Also there is a limit of fetching reviews using Zomato API
     - We thus, scraped reviews from zomato site, though we have a Zomato API wrapper
 
-:File Description-
+:Codebase Description-
 
-zomato-api-wrapper/
+zomato-api-wrapper/:
 ----------------------------------
 	1.zomatoApiModule.py - a python wrapper to the zomato API
 	2.driver.py - driver file for zomatoApiModule.py classes
